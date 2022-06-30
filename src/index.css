@@ -1,13 +1,65 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  /* Border Radius */
+  --border-radius-small: 0.375rem; /* buttons, small thing*/
+  --border-radius-large: 0.5rem;
+  /* End */
+
+  /* Font Size */
+  --main-font-size: 0.8125rem;
+  /* End */
+
+  /* Font Weight */
+  --main-font-weight: 400;
+  --bold-font-weight: 500; /* buttons, titulos */
+  /* End */
+
+  /* Font Color */
+  --main-white-color: rgb(255, 255, 255);
+  --main-font-color: rgb(51, 65, 85);
+  --bold-font-color: rgb(15, 23, 42);
+  --placeholder-font-color: rgb(148, 163, 184);
+  --sub-bold-font-color: rgb(100, 116, 139);
+  /* End */
+
+  /* Icon stroke color */
+  --main-stroke-svg-color: rgb(148, 163, 184);
+  --bold-stroke-svg-color: rgb(100, 116, 139);
+  /* End */
+
+  /* Border Color */
+  --main-border-color: rgba(51, 65, 85, 0.1); /* incluindo buttons and containers */
+  --divider-border-color: rgb(229, 231, 235);
+  --icon-button-border-color: rgba(15, 23, 42, 0.1); /* only */
+  /* border: 0 solid #e5e7eb; */
+
+  /* Box Shadow */
+  --box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .05), 0 8px 10px -6px rgba(0, 0, 0, .05);
+
+  /* Background button color */
+  --background-hover-color: rgb(248, 250, 252);
+  --background-active-color: rgb(237, 242, 247);
+
+  --main-background-color: rgb(243, 114, 44);
+  --main-hover-background-color: rgb(241, 93, 14);
+  --main-active-background-color: rgb(217, 84, 13);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
