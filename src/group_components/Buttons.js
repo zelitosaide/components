@@ -1,5 +1,5 @@
 import { Fieldset } from '../core_components/fieldset/Fieldset'
-import { TimesIcon } from '../core_components/icons/icons'
+// import { TimesIcon } from '../core_components/icons/icons'
 import { Input } from '../core_components/input/Input'
 
 export const Buttons = () => {

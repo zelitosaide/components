@@ -19,7 +19,14 @@ export const Input = ({ children, label, error, ...props }) => {
         '--outline-color': outlineColor
       }}
     >
+      {!!label && (
+        <label htmlFor={label} className={styles.label}>
+          {label}
+          {children?.props?.required && <span style={{ color: bgColor }}>&nbsp;*</span>}
+        </label>
+      )}
       {children}
+      {!!error && <div className={styles.error}>{error}</div>}
     </div>
   )
 }

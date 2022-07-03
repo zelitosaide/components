@@ -1,3 +1,20 @@
+.label {
+ font-size: var(--main-font-size);
+ color: var(--main-font-color);
+ font-weight: var(--bold-font-weight);
+ padding-bottom: 0.26rem;
+ display: inline-block;
+ font-family: var(--font-family);
+}
+
+.error {
+  font-size: var(--small-font-size);
+  padding-top: 0.26rem;
+  font-weight: var(--bold-font-weight);
+  color: var(--sub-bold-font-color);
+  font-family: var(--font-family);
+}
+
 .input {
   padding: 0.5rem;
 
@@ -13,6 +30,7 @@
   --main-outline-color: var(--outline-color);
 }
 
+/* button */
 .input button {
   outline: none;
   border: 1px solid var(--main-background-color);
@@ -42,6 +60,30 @@
 
 .input button:active {
   background: var(--main-active-background-color);
+}
+
+/* input */
+.input input[type=text],
+.input input[type=email] {
+  box-sizing: border-box;
+  border-radius: var(--border-radius-small);
+  border: 1px solid var(--main-border-color);
+  outline: none;
+  padding: 0 0.5rem;
+  font-size: var(--main-font-size);
+  color: var(--main-font-color);
+  font-weight: var(--main-font-weight);
+  height: 2.2rem;
+  width: 100%;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  font-family: var(--font-family);
+}
+
+.input input[type=text]:focus,
+.input input[type=email]:focus {
+  background: #FFFCC8 !important;
+  box-shadow: 0 0 0 .25rem #fdd8c1;
+  border: 1px solid #e4a57e !important;
 }
 
 

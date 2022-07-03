@@ -5,6 +5,7 @@ import { Section } from './core_components/section/Section'
 import { Modal } from './derived_components/modal/Modal'
 import { Notification } from './derived_components/notification/Notification'
 import { Buttons } from './group_components/Buttons'
+import { Inputs } from './group_components/Inputs'
 
 const App = () => {
   const [showModal, setShowModal] = useState(false)
@@ -48,6 +49,8 @@ const App = () => {
               text='Anyone with a link can now view this file'
             />
           </Fieldset>
+
+          <Inputs />
         </Section>
       </Section>
     </div>
