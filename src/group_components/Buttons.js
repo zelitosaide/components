@@ -46,11 +46,11 @@ export const Buttons = () => {
         <button>Click me</button>
       </Input>
 
-      <Input style={{ display: 'inline-block' }}>
+      {/* <Input style={{ display: 'inline-block' }}>
         <button style={{ padding: 0, width: '1.4rem', height: '1.4rem' }}>
           <TimesIcon />
         </button>
-      </Input>
+      </Input> */}
     </Fieldset>
   )
 }
