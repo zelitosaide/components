@@ -1,0 +1,58 @@
+.input {
+  padding: 0.5rem;
+
+  /* Background button color */
+  --main-background-color: var(--bg-color);
+  --main-hover-background-color: var(--bg-hover);
+  --main-active-background-color: var(--bg-active);
+
+  /* --background-hover-color: rgb(248, 250, 252);
+  --background-active-color: rgb(237, 242, 247); */
+
+  /* Outline */
+  --main-outline-color: var(--outline-color);
+}
+
+.input button {
+  outline: none;
+  border: 1px solid var(--main-background-color);
+  cursor: pointer;
+  display: block;
+  color: var(--main-white-color);
+  font-family: var(--font-family);
+  font-size: var(--main-font-size);
+  font-weight: var(--semibold-font-weight);
+  border-radius: var(--border-radius-small);
+  padding-left: var(--btn-padding-left);
+  padding-right: var(--btn-padding-right);
+  padding-top: var(--btn-padding-top);
+  padding-bottom: var(--btn-padding-bottom);
+  background: var(--main-background-color);
+}
+
+.input button:focus {
+  outline: 2px solid var(--main-outline-color);
+  outline-offset: 2px;
+}
+
+.input button:hover {
+  background: var(--main-hover-background-color);
+  border: 1px solid var(--main-hover-background-color);
+}
+
+.input button:active {
+  background: var(--main-active-background-color);
+}
+
+
+
+
+/* Padding for small buttons */
+/* padding-left: .5rem;
+padding-right: .5rem; */
+
+/* padding-bottom: .3125rem;
+padding-top: .3125rem; */
+
+/* height: 1.5rem;
+width: 1.5rem; */

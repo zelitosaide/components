@@ -3,6 +3,7 @@ export const Fieldset = ({ children, legend, legendStyle, error, ...props }) => 
     <>
       <fieldset {...props} style={{ ...fieldset, ...props.style }}>
         <legend style={{ ...__legend, ...legendStyle }}>{legend}</legend>
+        {children}
       </fieldset>
       <div style={{}}>{error}</div>
     </>
@@ -10,7 +11,8 @@ export const Fieldset = ({ children, legend, legendStyle, error, ...props }) => 
 }
 
 const fieldset = {
-  border: '1px solid #ccc',
+  border: '1px solid var(--main-border-color)',
+  // boxShadow: 'var(--box-shadow)',
   background: 'white',
   borderRadius: '0.3rem',
   margin: '0.5rem'
