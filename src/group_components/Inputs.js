@@ -10,7 +10,9 @@ export const Inputs = () => {
     defaultValues: {
       firstName: '',
       lastName: '',
-      email: ''
+      email: '',
+      birthDate: '',
+      height: ''
     }
   })
 
@@ -44,6 +46,19 @@ export const Inputs = () => {
                   required: 'This field is required'
                 })}
               />
+            </Input>
+          </Column>
+        </Row>
+
+        <Row>
+          <Column style={{ width: '50%' }}>
+            <Input label='Birth Date'>
+              <input type='date' {...register('birthDate')} />
+            </Input>
+          </Column>
+          <Column style={{ width: '50%' }}>
+            <Input label='Height'>
+              <input type='number' {...register('height')} />
             </Input>
           </Column>
         </Row>

@@ -64,7 +64,9 @@
 
 /* input */
 .input input[type=text],
-.input input[type=email] {
+.input input[type=email],
+.input input[type=date],
+.input input[type=number] {
   box-sizing: border-box;
   border-radius: var(--border-radius-small);
   border: 1px solid var(--main-border-color);
@@ -80,7 +82,9 @@
 }
 
 .input input[type=text]:focus,
-.input input[type=email]:focus {
+.input input[type=email]:focus,
+.input input[type=date]:focus,
+.input input[type=number]:focus {
   background: #FFFCC8 !important;
   box-shadow: 0 0 0 .25rem #fdd8c1;
   border: 1px solid #e4a57e !important;
