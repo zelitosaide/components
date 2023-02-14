@@ -28,6 +28,19 @@ export default function Task({ task, onChange, onDelete }) {
         </Button>
       </>
     );
+  } else {
+    taskContent = (
+      <>
+        {task.text}
+        <Button
+          onClick={function () {
+            setIsEditing(true);
+          }}
+        >
+          Edit
+        </Button>
+      </>
+    );
   }
 
   return (
