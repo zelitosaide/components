@@ -42,7 +42,29 @@ function TaskApp() {
     }
   }
 
-  async function handleChangeTask(nextTask) {}
+  async function handleChangeTask(nextTask) {
+    try {
+      const response = await fetch(baseUrl + "tasks/" + nextTask._id, {
+        method: "PATCH",
+        body: JSON.stringify(nextTask),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      });
+      const task = await response.json();
+      setTasks(
+        tasks.map(function (t) {
+          if (t._id === task._id) {
+            return task;
+          } else {
+            return t;
+          }
+        })
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   async function handleDeleteTask(taskId) {}
 
