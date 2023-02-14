@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import AddTask from "./add-task";
 import TaskList from "./task-list";
 
-import { addTask, baseUrl } from "../../api";
+import { addTask, baseUrl, changeTask } from "../../api";
 
 export default function Index() {
   return <TaskApp />;
@@ -37,18 +37,11 @@ function TaskApp() {
 
   async function handleChangeTask(nextTask) {
     try {
-      const response = await fetch(baseUrl + "tasks/" + nextTask._id, {
-        method: "PATCH",
-        body: JSON.stringify(nextTask),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      });
-      const task = await response.json();
+      await changeTask(nextTask);
       setTasks(
         tasks.map(function (t) {
-          if (t._id === task._id) {
-            return task;
+          if (t._id === nextTask._id) {
+            return nextTask;
           } else {
             return t;
           }
