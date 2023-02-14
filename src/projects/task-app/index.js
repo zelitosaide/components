@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import AddTask from "./add-task";
 import TaskList from "./task-list";
@@ -14,6 +14,15 @@ function TaskApp() {
   const [status, setStatus] = useState("typing");
 
   const isAdding = status === "adding";
+
+  useEffect(function () {
+    async function fetchTasks() {
+      const response = await fetch(baseUrl + "tasks", { method: "GET" });
+      const tasks = await response.json();
+      setTasks(tasks);
+    }
+    fetchTasks();
+  }, []);
 
   async function handleAddTask(text) {
     try {
