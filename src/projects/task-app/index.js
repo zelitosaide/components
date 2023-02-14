@@ -17,7 +17,7 @@ function TaskApp() {
 
   useEffect(function () {
     async function fetchTasks() {
-      const response = await fetch(baseUrl + "tasks", { method: "GET" });
+      const response = await fetch(baseUrl + "tasks");
       const tasks = await response.json();
       setTasks(tasks);
     }
