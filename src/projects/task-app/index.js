@@ -26,7 +26,6 @@ function TaskApp() {
         },
       });
       const task = await response.json();
-
       setStatus("added");
       setTasks([...tasks, task]);
     } catch (error) {
