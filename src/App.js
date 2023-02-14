@@ -1,13 +1,5 @@
-import { Button } from "./components/core/button";
+import TaskApp from "./projects/task-app";
 
 export default function App() {
-  return (
-    <Button
-      onClick={function () {
-        alert("Ola");
-      }}
-    >
-      Send
-    </Button>
-  );
+  return <TaskApp />;
 }
