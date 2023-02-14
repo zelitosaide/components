@@ -10,3 +10,14 @@ export async function addTask(task) {
   });
   return await response.json();
 }
+
+export async function changeTask(nextTask) {
+  const response = await fetch(baseUrl + "tasks/" + nextTask._id, {
+    method: "PATCH",
+    body: JSON.stringify(nextTask),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+  return await response.json();
+}
