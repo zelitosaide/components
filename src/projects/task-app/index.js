@@ -18,11 +18,15 @@ function TaskApp() {
   async function handleAddTask(text) {
     try {
       setStatus("adding");
-      const task = { text: text, done: false };
-      await fetch(baseUrl + "tasks", {
+      const response = await fetch(baseUrl + "tasks", {
         method: "POST",
-        body: JSON.stringify(task),
+        body: JSON.stringify({ text: text, done: false }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
       });
+      const task = await response.json();
+
       setStatus("added");
       setTasks([...tasks, task]);
     } catch (error) {
