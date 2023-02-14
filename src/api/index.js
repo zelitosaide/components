@@ -8,6 +8,5 @@ export async function addTask(task) {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
-
   return await response.json();
 }
