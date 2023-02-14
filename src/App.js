@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Fieldset } from './core_components/fieldset/Fieldset'
 import { Input } from './core_components/input/Input'
+import { MultiForm } from './core_components/multi_step_form/MultiForm'
 import { Section } from './core_components/section/Section'
 import { Modal } from './derived_components/modal/Modal'
 import { Notification } from './derived_components/notification/Notification'
@@ -15,8 +16,10 @@ const App = () => {
     setShowNotification(true)
     setTimeout(() => {
       setShowNotification(false)
-    }, 6000)
+    }, 60000)
   }
+
+
 
   return (
     <div>
@@ -51,6 +54,8 @@ const App = () => {
           </Fieldset>
 
           <Inputs />
+
+          <MultiForm />
         </Section>
       </Section>
     </div>

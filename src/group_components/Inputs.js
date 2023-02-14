@@ -27,7 +27,6 @@ export const Inputs = () => {
           <Column style={{ width: '50%' }}>
             <Input error={errors.firstName?.message} label='First Name'>
               <input
-                required
                 type='text'
                 id='First Name'
                 {...register('firstName', {
@@ -39,7 +38,6 @@ export const Inputs = () => {
           <Column style={{ width: '50%' }}>
             <Input error={errors.lastName?.message} label='Last Name'>
               <input
-                required
                 type='text'
                 id='Last Name'
                 {...register('lastName', {
