@@ -1,4 +1,4 @@
-export function Button({ children, onClick, style }) {
+export function Button({ children, onClick, style, disabled }) {
   return (
     <button
       style={{ ...style }}
@@ -6,6 +6,7 @@ export function Button({ children, onClick, style }) {
         e.stopPropagation();
         onClick();
       }}
+      disabled={disabled}
     >
       {children}
     </button>
