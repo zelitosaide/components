@@ -42,13 +42,21 @@ function TaskApp() {
     }
   }
 
+  async function handleChangeTask(nextTask) {}
+
+  async function handleDeleteTask(taskId) {}
+
   return (
     <>
       <AddTask
         onAddTask={handleAddTask}
         isAdding={isAdding}
       />
-      <TaskList />
+      <TaskList
+        tasks={tasks}
+        onChangeTask={handleChangeTask}
+        onDeleteTask={handleDeleteTask}
+      />
     </>
   );
 }
