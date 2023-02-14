@@ -21,3 +21,9 @@ export async function changeTask(nextTask) {
   });
   return await response.json();
 }
+
+export async function deleteTask(taskId) {
+  await fetch(baseUrl + "tasks/" + taskId, {
+    method: "DELETE",
+  });
+}
