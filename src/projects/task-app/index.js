@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import AddTask from "./add-task";
 import TaskList from "./task-list";
 
-import { addTask, baseUrl, changeTask } from "../../api";
+import { addTask, baseUrl, changeTask, deleteTask } from "../../api";
 
 export default function Index() {
   return <TaskApp />;
@@ -54,7 +54,7 @@ function TaskApp() {
 
   async function handleDeleteTask(taskId) {
     try {
-      await fetch(baseUrl + "tasks/" + taskId, { method: "DELETE" });
+      await deleteTask(taskId);
       setTasks(
         tasks.filter(function (t) {
           return t._id !== taskId;
