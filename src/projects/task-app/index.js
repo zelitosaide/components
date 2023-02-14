@@ -68,9 +68,7 @@ function TaskApp() {
 
   async function handleDeleteTask(taskId) {
     try {
-      await fetch(baseUrl + "tasks/" + taskId, {
-        method: "DELETE",
-      });
+      await fetch(baseUrl + "tasks/" + taskId, { method: "DELETE" });
       setTasks(
         tasks.filter(function (t) {
           return t._id !== taskId;
