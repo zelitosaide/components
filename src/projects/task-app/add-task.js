@@ -23,7 +23,7 @@ export default function AddTask({ onAddTask, isAdding }) {
         }}
         disabled={isAdding}
       >
-        Add
+        {isAdding ? "Adding..." : "Add"}
       </Button>
     </>
   );
