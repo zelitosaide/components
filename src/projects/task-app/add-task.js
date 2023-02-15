@@ -1,21 +1,19 @@
 import { useState } from "react";
 
 import { Button } from "../../components/core/button";
+import { Input } from "../../components/core/input";
 
 export default function AddTask({ onAddTask, isAdding }) {
   const [text, setText] = useState("");
 
   return (
     <>
-      <input
-        disabled={isAdding}
-        type="text"
-        placeholder="Add task"
+      <Input
         value={text}
-        onChange={function (e) {
-          setText(e.target.value);
-        }}
+        onChange={setText}
+        disabled={isAdding}
       />
+      <input placeholder="Add task" />
       <Button
         onClick={function () {
           setText("");
