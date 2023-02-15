@@ -28,6 +28,10 @@ export default function Task({ task, onChange, onDelete }) {
         <Button
           onClick={function () {
             setIsEditing(false);
+            onChange({
+              ...task,
+              text: text,
+            });
           }}
         >
           Save
