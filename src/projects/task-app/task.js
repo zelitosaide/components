@@ -19,6 +19,14 @@ export default function Task({ task, onChange, onDelete }) {
         />
         <Button
           onClick={function () {
+            setText(task.text);
+            setIsEditing(false);
+          }}
+        >
+          Cancel
+        </Button>
+        <Button
+          onClick={function () {
             setIsEditing(false);
           }}
         >
