@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { Button } from "../../components/core/button";
+import { Input } from "../../components/core/input";
 
 export default function Task({ task, onChange, onDelete }) {
   const [text, setText] = useState(task.text);
@@ -10,12 +11,9 @@ export default function Task({ task, onChange, onDelete }) {
   if (isEditing) {
     taskContent = (
       <>
-        <input
-          type="text"
+        <Input
           value={text}
-          onChange={function (e) {
-            setText(e.target.value);
-          }}
+          onChange={setText}
         />
         <Button
           onClick={function () {
