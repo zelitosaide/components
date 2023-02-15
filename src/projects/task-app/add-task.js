@@ -9,11 +9,11 @@ export default function AddTask({ onAddTask, isAdding }) {
   return (
     <>
       <Input
+        label="Add task"
         value={text}
         onChange={setText}
         disabled={isAdding}
       />
-      <input placeholder="Add task" />
       <Button
         onClick={function () {
           setText("");
