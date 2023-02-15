@@ -1,7 +1,6 @@
 import Task from "./task";
 
 export default function TaskList({ tasks, onChangeTask, onDeleteTask }) {
-  console.log(tasks);
   return (
     <ul>
       {tasks.map(function (task) {
