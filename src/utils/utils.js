@@ -3,5 +3,5 @@ export function formatDate(date) {
 }
 
 export function formatTime(date) {
-  return date.toLocaleTimeString();
+  return date.toLocaleTimeString().split(" ")[0];
 }
