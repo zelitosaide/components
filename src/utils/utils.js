@@ -3,8 +3,5 @@ export function formatDate(date) {
 }
 
 export function formatTime(date) {
-  new Intl.DateTimeFormat("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-  }).format(date);
+  return date.toLocaleTimeString();
 }
