@@ -19,14 +19,14 @@ export default function AddTask({ onAddTask, isAdding }) {
       />
       <Input
         type="date"
-        label="Start Date"
+        label="Date"
         value={date}
         onChange={setDate}
         disabled={isAdding}
       />
       <Input
-        type="date"
-        label="End Date"
+        type="time"
+        label="Hour"
         value={hour}
         onChange={setHour}
         disabled={isAdding}
