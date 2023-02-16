@@ -2,12 +2,11 @@ import { useState } from "react";
 
 import { Button } from "../../components/core/button";
 import { Input } from "../../components/core/input";
+import { formatDate } from "../../utils/utils";
 
 export default function AddTask({ onAddTask, isAdding }) {
   const [text, setText] = useState("");
-  const [startAt, setStartAt] = useState(
-    new Date().toISOString().split("T")[0]
-  );
+  const [startAt, setStartAt] = useState(formatDate(new Date()));
 
   return (
     <>
