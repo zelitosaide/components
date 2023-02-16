@@ -6,8 +6,8 @@ import { formatDate } from "../../utils/utils";
 
 export default function AddTask({ onAddTask, isAdding }) {
   const [text, setText] = useState("");
-  const [startAt, setStartAt] = useState(formatDate(new Date()));
-  const [endAt, setEndAt] = useState(formatDate(new Date()));
+  const [date, setDate] = useState(formatDate(new Date()));
+  const [hour, setHour] = useState(formatDate(new Date()));
 
   return (
     <>
@@ -20,15 +20,15 @@ export default function AddTask({ onAddTask, isAdding }) {
       <Input
         type="date"
         label="Start Date"
-        value={startAt}
-        onChange={setStartAt}
+        value={date}
+        onChange={setDate}
         disabled={isAdding}
       />
       <Input
         type="date"
         label="End Date"
-        value={endAt}
-        onChange={setEndAt}
+        value={hour}
+        onChange={setHour}
         disabled={isAdding}
       />
       <Button
