@@ -40,8 +40,14 @@ export default function Task({ task, onChange, onDelete }) {
     taskContent = (
       <>
         <p style={{ margin: "5px 0px" }}>{text}</p>
-        <p style={{ margin: "5px 0px" }}>{formatDate(new Date(date))}</p>
-        <p style={{ margin: "5px 0px" }}>{hour}</p>
+        <p style={{ margin: "5px 0px", fontSize: 12 }}>
+          <span style={{ background: "pink", padding: "1px 4px" }}>
+            {formatDate(new Date(date))}
+          </span>
+        </p>
+        <p style={{ margin: "5px 0px", fontSize: 12 }}>
+          <span style={{ background: "pink", padding: "1px 4px" }}>{hour}</span>
+        </p>
       </>
     );
   }
