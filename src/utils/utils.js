@@ -3,12 +3,7 @@ export function formatDate(date) {
 }
 
 export function formatTime(date) {
-  return date
-    .toLocaleTimeString()
-    .split(" ")[0]
-    .split(":")
-    .slice(0, 2)
-    .join(":");
+  return date.toISOString().slice(11, 16);
 }
 
 export function formatDateIntl(date) {

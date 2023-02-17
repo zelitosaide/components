@@ -7,7 +7,7 @@ import { formatDate } from "../../utils/utils";
 export default function AddTask({ onAddTask, isAdding }) {
   const [text, setText] = useState("");
   const [date, setDate] = useState(formatDate(new Date()));
-  const [hour, setHour] = useState("");
+  const [hour, setHour] = useState("04:08");
   const [isRepeated, setIsRepeated] = useState(false);
 
   return (

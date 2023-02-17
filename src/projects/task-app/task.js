@@ -6,71 +6,73 @@ import { formatDateIntl } from "../../utils/utils";
 
 export default function Task({ task, onChange, onDelete }) {
   const [text, setText] = useState(task.text);
-  const [isEditing, setIsEditing] = useState(false);
-  let taskContent;
+  const [date, setDate] = useState(task.date);
+  // const
+  // const [isEditing, setIsEditing] = useState(false);
+  // let taskContent;
 
-  if (isEditing) {
-    taskContent = (
-      <>
-        <Input
-          value={text}
-          onChange={setText}
-        />
-        <Button
-          onClick={function () {
-            setText(task.text);
-            setIsEditing(false);
-          }}
-        >
-          Cancel
-        </Button>
-        <Button
-          onClick={function () {
-            setIsEditing(false);
-            onChange({ ...task, text: text });
-          }}
-        >
-          Save
-        </Button>
-      </>
-    );
-  } else {
-    taskContent = (
-      <>
-        {task.text}
-        <Button
-          onClick={function () {
-            setIsEditing(true);
-          }}
-        >
-          Edit
-        </Button>
-      </>
-    );
-  }
+  // if (isEditing) {
+  //   taskContent = (
+  //     <>
+  //       <Input
+  //         value={text}
+  //         onChange={setText}
+  //       />
+  //       <Button
+  //         onClick={function () {
+  //           setText(task.text);
+  //           setIsEditing(false);
+  //         }}
+  //       >
+  //         Cancel
+  //       </Button>
+  //       <Button
+  //         onClick={function () {
+  //           setIsEditing(false);
+  //           onChange({ ...task, text: text });
+  //         }}
+  //       >
+  //         Save
+  //       </Button>
+  //     </>
+  //   );
+  // } else {
+  //   taskContent = (
+  //     <>
+  //       {task.text}
+  //       <Button
+  //         onClick={function () {
+  //           setIsEditing(true);
+  //         }}
+  //       >
+  //         Edit
+  //       </Button>
+  //     </>
+  //   );
+  // }
 
-  return (
-    <label>
-      <input
-        type="checkbox"
-        checked={task.done}
-        onChange={function (e) {
-          onChange({
-            ...task,
-            done: e.target.checked,
-          });
-        }}
-      />
-      {taskContent}
-      <div>{formatDateIntl(new Date(task.date))}</div>
-      <div>{task.hour}</div>
-      <Button
-        onClick={function () {
-          onDelete(task._id);
-        }}
-      >
-        Delete
-      </Button>
-    </label>
-  );
+  // return (
+  //   <label>
+  //     <input
+  //       type="checkbox"
+  //       checked={task.done}
+  //       onChange={function (e) {
+  //         onChange({
+  //           ...task,
+  //           done: e.target.checked,
+  //         });
+  //       }}
+  //     />
+  //     {taskContent}
+  //     <div>{formatDateIntl(new Date(task.date))}</div>
+  //     <div>{task.hour}</div>
+  //     <Button
+  //       onClick={function () {
+  //         onDelete(task._id);
+  //       }}
+  //     >
+  //       Delete
+  //     </Button>
+  //   </label>
+  // );
 }
