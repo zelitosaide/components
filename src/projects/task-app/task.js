@@ -113,31 +113,4 @@ export default function Task({ task, onChange, onDelete }) {
       </p>
     </>
   );
-
-  // if (isEditing) {
-  //   taskContent = (
-  //     <>
-  //       <Input
-  //         value={text}
-  //         onChange={setText}
-  //       />
-  //       <Button
-  //         onClick={function () {
-  //           setText(task.text);
-  //           setIsEditing(false);
-  //         }}
-  //       >
-  //         Cancel
-  //       </Button>
-  //       <Button
-  //         onClick={function () {
-  //           setIsEditing(false);
-  //           onChange({ ...task, text: text });
-  //         }}
-  //       >
-  //         Save
-  //       </Button>
-  //     </>
-  //   );
-  // }
 }
