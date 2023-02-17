@@ -49,7 +49,7 @@ export default function Task({ task, onChange, onDelete }) {
   return (
     <>
       {taskContent}
-      <p>
+      <p style={{ margin: "5px 0px" }}>
         <label>
           <input
             type="checkbox"
@@ -64,7 +64,7 @@ export default function Task({ task, onChange, onDelete }) {
           Repeat
         </label>
       </p>
-      <p>
+      <p style={{ margin: "5px 0px" }}>
         <label>
           <input
             type="checkbox"
