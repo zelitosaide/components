@@ -18,21 +18,27 @@ export default function Task({ task, onChange, onDelete }) {
         <p style={{ margin: "5px 0px" }}>
           <Input
             value={text}
-            onChange={setText}
+            onChange={function (e) {
+              setText(e.target.value);
+            }}
           />
         </p>
         <p style={{ margin: "5px 0px" }}>
           <Input
             type="date"
             value={formatDateForInputField(new Date(date))}
-            onChange={setDate}
+            onChange={function (e) {
+              setDate(e.target.value);
+            }}
           />
         </p>
         <p style={{ margin: "5px 0px" }}>
           <Input
             type="time"
             value={hour}
-            onChange={setHour}
+            onChange={function (e) {
+              setHour(e.target.value);
+            }}
           />
         </p>
       </>
