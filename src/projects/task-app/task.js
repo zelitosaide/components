@@ -15,6 +15,18 @@ export default function Task({ task, onChange, onDelete }) {
     <>
       <p>{text}</p>
       <p>{formatDate(new Date(date))}</p>
+      <p>{hour}</p>
+      <p>
+        <label>
+          <input
+            type="checkbox"
+            checked={isRepeated}
+            onChange={function (e) {
+              setIsRepeated(e.target.checked);
+            }}
+          />
+        </label>
+      </p>
     </>
   );
   // const [isEditing, setIsEditing] = useState(false);
