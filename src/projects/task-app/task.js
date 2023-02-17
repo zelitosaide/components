@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { Button } from "../../components/core/button";
 import { Input } from "../../components/core/input";
+import { formatDateIntl } from "../../utils/utils";
 
 export default function Task({ task, onChange, onDelete }) {
   const [text, setText] = useState(task.text);
@@ -61,6 +62,8 @@ export default function Task({ task, onChange, onDelete }) {
         }}
       />
       {taskContent}
+      <div>{formatDateIntl(new Date(task.date))}</div>
+      <div>{task.hour}</div>
       <Button
         onClick={function () {
           onDelete(task._id);

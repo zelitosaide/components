@@ -10,3 +10,7 @@ export function formatTime(date) {
     .slice(0, 2)
     .join(":");
 }
+
+export function formatDateIntl(date) {
+  return new Intl.DateTimeFormat("pt-PT", { dateStyle: "short" }).format(date);
+}
