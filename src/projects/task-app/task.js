@@ -14,20 +14,20 @@ export default function Task({ task, onChange, onDelete }) {
   if (isEditing) {
     taskContent = (
       <>
-        <p>
+        <p style={{ margin: "5px 0px" }}>
           <Input
             value={text}
             onChange={setText}
           />
         </p>
-        <p>
+        <p style={{ margin: "5px 0px" }}>
           <Input
             type="date"
             value={formatDateForInputField(new Date(date))}
             onChange={setDate}
           />
         </p>
-        <p>
+        <p style={{ margin: "5px 0px" }}>
           <Input
             type="time"
             value={hour}
