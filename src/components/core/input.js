@@ -1,8 +1,7 @@
-export function Input({ value, onChange, disabled, label, type = "text" }) {
+export function Input({ value, onChange, disabled, type = "text" }) {
   return (
     <input
       type={type}
-      placeholder={label}
       disabled={disabled}
       value={value}
       onChange={function (e) {
