@@ -13,13 +13,19 @@ export default function Task({ task, onChange, onDelete }) {
 
   if (isEditing) {
     taskContent = <></>;
+  } else {
+    taskContent = (
+      <>
+        <p>{text}</p>
+        <p>{formatDate(new Date(date))}</p>
+        <p>{hour}</p>
+      </>
+    );
   }
 
   return (
     <>
-      <p>{text}</p>
-      <p>{formatDate(new Date(date))}</p>
-      <p>{hour}</p>
+      {taskContent}
       <p>
         <label>
           <input
