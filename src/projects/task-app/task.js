@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Button } from "../../components/core/button";
 import { Input } from "../../components/core/input";
-import { formatDateIntl } from "../../utils/utils";
+import { formatDate } from "../../utils/utils";
 
 export default function Task({ task, onChange, onDelete }) {
   const [text, setText] = useState(task.text);
@@ -10,7 +10,13 @@ export default function Task({ task, onChange, onDelete }) {
   const [hour, setHour] = useState(task.hour);
   const [isRepeated, setIsRepeated] = useState(task.isRepeated);
   const [done, setDone] = useState(task.done);
-  // const
+
+  return (
+    <>
+      <p>{text}</p>
+      <p>{formatDate(new Date(date))}</p>
+    </>
+  );
   // const [isEditing, setIsEditing] = useState(false);
   // let taskContent;
 
