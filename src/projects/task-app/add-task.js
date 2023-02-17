@@ -43,7 +43,7 @@ export default function AddTask({ onAddTask, isAdding }) {
           disabled={isAdding}
         />
       </label>
-      <label style={{ display: "block" }}>
+      <label style={{ display: "block", marginBottom: 10 }}>
         <input
           type="checkbox"
           checked={isRepeated}
