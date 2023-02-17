@@ -55,8 +55,8 @@ export default function Task({ task, onChange, onDelete }) {
   return (
     <>
       {taskContent}
-      <p style={{ margin: "5px 0px" }}>
-        <label>
+      <p style={{ margin: "2px 0px" }}>
+        <label style={{ fontSize: 12 }}>
           <input
             type="checkbox"
             checked={task.isRepeated}
@@ -70,8 +70,8 @@ export default function Task({ task, onChange, onDelete }) {
           Repeat
         </label>
       </p>
-      <p style={{ margin: "5px 0px" }}>
-        <label>
+      <p style={{ margin: "2px 0px" }}>
+        <label style={{ fontSize: 12 }}>
           <input
             type="checkbox"
             checked={task.done}
