@@ -2,7 +2,11 @@ import { useState } from "react";
 
 import { Button } from "../../components/core/button";
 import { Input } from "../../components/core/input";
-import { formatDate, formatDateForInputField } from "../../utils/utils";
+import {
+  formatDate,
+  formatDateForInputField,
+  formatTimeForInputField,
+} from "../../utils/utils";
 
 export default function Task({ task, onChange, onDelete }) {
   const [text, setText] = useState(task.text);
@@ -25,6 +29,13 @@ export default function Task({ task, onChange, onDelete }) {
             type="date"
             value={formatDateForInputField(new Date(date))}
             onChange={setDate}
+          />
+        </p>
+        <p>
+          <Input
+            type="time"
+            value={hour}
+            onChange={setHour}
           />
         </p>
       </>
