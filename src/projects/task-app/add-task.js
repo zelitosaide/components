@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { Button } from "../../components/core/button";
+import { Checkbox } from "../../components/core/checkbox";
 import { Input } from "../../components/core/input";
 import {
   formatDateForInputField,
@@ -44,9 +45,8 @@ export default function AddTask({ onAddTask, isAdding }) {
         />
       </label>
       <label style={{ display: "block", marginBottom: 10 }}>
-        <input
-          type="checkbox"
-          checked={isRepeated}
+        <Checkbox
+          value={isRepeated}
           onChange={function (e) {
             setIsRepeated(e.target.checked);
           }}
