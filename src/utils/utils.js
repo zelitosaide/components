@@ -10,5 +10,5 @@ export function formatTimeForInputField(date) {
 }
 
 export function formatDate(date) {
-  return new Intl.DateTimeFormat("pt-PT", { dateStyle: "full" }).format(date);
+  return new Intl.DateTimeFormat("pt-PT", { dateStyle: "medium" }).format(date);
 }
