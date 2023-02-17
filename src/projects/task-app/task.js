@@ -7,6 +7,7 @@ import { formatDateIntl } from "../../utils/utils";
 export default function Task({ task, onChange, onDelete }) {
   const [text, setText] = useState(task.text);
   const [date, setDate] = useState(task.date);
+  const [hour, setHour] = useState(task.hour);
   // const
   // const [isEditing, setIsEditing] = useState(false);
   // let taskContent;
