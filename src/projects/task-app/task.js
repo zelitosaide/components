@@ -8,6 +8,12 @@ export default function Task({ task, onChange, onDelete }) {
   const [text, setText] = useState(task.text);
   const [date, setDate] = useState(task.date);
   const [hour, setHour] = useState(task.hour);
+  const [isEditing, setIsEditing] = useState(false);
+  let taskContent;
+
+  if (isEditing) {
+    taskContent = <></>;
+  }
 
   return (
     <>
@@ -43,6 +49,20 @@ export default function Task({ task, onChange, onDelete }) {
           />
           Complete
         </label>
+      </p>
+      <p>
+        <Button
+          onClick={function () {
+            if (isEditing) {
+              setIsEditing(false);
+            } else {
+              setIsEditing(true);
+            }
+          }}
+        >
+          {isEditing ? "Save" : "Edit"}
+        </Button>
+        <Button>Delete</Button>
       </p>
     </>
   );
