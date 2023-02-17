@@ -8,6 +8,8 @@ export default function Task({ task, onChange, onDelete }) {
   const [text, setText] = useState(task.text);
   const [date, setDate] = useState(task.date);
   const [hour, setHour] = useState(task.hour);
+  const [isRepeated, setIsRepeated] = useState(task.isRepeated);
+  const [done, setDone] = useState(task.done);
   // const
   // const [isEditing, setIsEditing] = useState(false);
   // let taskContent;
