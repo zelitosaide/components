@@ -20,6 +20,13 @@ export default function Task({ task, onChange, onDelete }) {
             onChange={setText}
           />
         </p>
+        <p>
+          <Input
+            type="date"
+            value={date}
+            onChange={setDate}
+          />
+        </p>
       </>
     );
   } else {
