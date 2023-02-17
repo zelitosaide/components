@@ -3,7 +3,11 @@ export function formatDate(date) {
 }
 
 export function formatTime(date) {
-  return date.toISOString().slice(11, 16);
+  // return date.toISOString().slice(11, 16);
+  return new Intl.DateTimeFormat("pt-PT", {
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(date);
 }
 
 export function formatDateIntl(date) {
