@@ -24,7 +24,7 @@ function TaskApp() {
     fetchTasks();
   }, []);
 
-  async function handleAddTask({ text, date, hour }) {
+  async function handleAddTask({ text, date, hour, isRepeated }) {
     try {
       setStatus("adding");
       const task = await addTask({
@@ -32,7 +32,7 @@ function TaskApp() {
         date: date,
         hour: hour,
         done: false,
-        isRepeated: false,
+        isRepeated: isRepeated,
       });
       setStatus("added");
       setTasks([...tasks, task]);

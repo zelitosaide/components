@@ -51,7 +51,7 @@ export default function AddTask({ onAddTask, isAdding }) {
       <Button
         onClick={function () {
           setText("");
-          onAddTask({ text, date, hour });
+          onAddTask({ text, date, hour, isRepeated });
         }}
         disabled={isAdding}
       >
