@@ -15,12 +15,14 @@ export default function AddTask({ onAddTask, isAdding }) {
 
   return (
     <>
-      <Input
-        label="Add task"
-        value={text}
-        onChange={setText}
-        disabled={isAdding}
-      />
+      <label>
+        Task:{" "}
+        <Input
+          value={text}
+          onChange={setText}
+          disabled={isAdding}
+        />
+      </label>
       <label style={{ display: "block" }}>
         Date:{" "}
         <Input
