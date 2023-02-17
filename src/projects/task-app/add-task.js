@@ -15,7 +15,7 @@ export default function AddTask({ onAddTask, isAdding }) {
 
   return (
     <>
-      <label>
+      <label style={{ display: "block", marginBottom: 10 }}>
         Task:{" "}
         <Input
           value={text}
@@ -23,7 +23,7 @@ export default function AddTask({ onAddTask, isAdding }) {
           disabled={isAdding}
         />
       </label>
-      <label style={{ display: "block" }}>
+      <label style={{ display: "block", marginBottom: 10 }}>
         Date:{" "}
         <Input
           type="date"
@@ -33,7 +33,7 @@ export default function AddTask({ onAddTask, isAdding }) {
           disabled={isAdding}
         />
       </label>
-      <label style={{ display: "block" }}>
+      <label style={{ display: "block", marginBottom: 10 }}>
         Hour:{" "}
         <Input
           type="time"
