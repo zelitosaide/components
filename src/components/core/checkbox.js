@@ -3,9 +3,7 @@ export function Checkbox({ value, onChange }) {
     <input
       type="checkbox"
       checked={value}
-      onChange={function (e) {
-        onChange(e.target.checked);
-      }}
+      onChange={onChange}
     />
   );
 }
