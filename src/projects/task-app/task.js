@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Button } from "../../components/core/button";
 import { Input } from "../../components/core/input";
-import { formatDate } from "../../utils/utils";
+import { formatDate, formatDateForInputField } from "../../utils/utils";
 
 export default function Task({ task, onChange, onDelete }) {
   const [text, setText] = useState(task.text);
@@ -23,7 +23,7 @@ export default function Task({ task, onChange, onDelete }) {
         <p>
           <Input
             type="date"
-            value={date}
+            value={formatDateForInputField(new Date(date))}
             onChange={setDate}
           />
         </p>
