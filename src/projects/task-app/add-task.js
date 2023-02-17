@@ -8,6 +8,7 @@ export default function AddTask({ onAddTask, isAdding }) {
   const [text, setText] = useState("");
   const [date, setDate] = useState(formatDate(new Date()));
   const [hour, setHour] = useState("");
+  const [isRepeated, setIsRepeated] = useState(false);
 
   return (
     <>
@@ -35,6 +36,16 @@ export default function AddTask({ onAddTask, isAdding }) {
           value={hour}
           onChange={setHour}
           disabled={isAdding}
+        />
+      </label>
+      <label style={{ display: "block" }}>
+        Repeat{" "}
+        <input
+          type="checkbox"
+          checked={isRepeated}
+          onChange={function (e) {
+            setIsRepeated(e.target.checked);
+          }}
         />
       </label>
       <Button
