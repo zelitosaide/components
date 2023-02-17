@@ -39,7 +39,6 @@ export default function AddTask({ onAddTask, isAdding }) {
         />
       </label>
       <label style={{ display: "block" }}>
-        Repeat{" "}
         <input
           type="checkbox"
           checked={isRepeated}
@@ -47,6 +46,7 @@ export default function AddTask({ onAddTask, isAdding }) {
             setIsRepeated(e.target.checked);
           }}
         />
+        Repeat
       </label>
       <Button
         onClick={function () {
