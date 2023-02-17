@@ -84,6 +84,12 @@ export default function Task({ task, onChange, onDelete }) {
           onClick={function () {
             if (isEditing) {
               setIsEditing(false);
+              onChange({
+                ...task,
+                text: text,
+                date: date,
+                hour: hour,
+              });
             } else {
               setIsEditing(true);
             }
@@ -107,8 +113,6 @@ export default function Task({ task, onChange, onDelete }) {
       </p>
     </>
   );
-  // const [isEditing, setIsEditing] = useState(false);
-  // let taskContent;
 
   // if (isEditing) {
   //   taskContent = (
@@ -135,43 +139,5 @@ export default function Task({ task, onChange, onDelete }) {
   //       </Button>
   //     </>
   //   );
-  // } else {
-  //   taskContent = (
-  //     <>
-  //       {task.text}
-  //       <Button
-  //         onClick={function () {
-  //           setIsEditing(true);
-  //         }}
-  //       >
-  //         Edit
-  //       </Button>
-  //     </>
-  //   );
   // }
-
-  // return (
-  //   <label>
-  //     <input
-  //       type="checkbox"
-  //       checked={task.done}
-  //       onChange={function (e) {
-  //         onChange({
-  //           ...task,
-  //           done: e.target.checked,
-  //         });
-  //       }}
-  //     />
-  //     {taskContent}
-  //     <div>{formatDateIntl(new Date(task.date))}</div>
-  //     <div>{task.hour}</div>
-  //     <Button
-  //       onClick={function () {
-  //         onDelete(task._id);
-  //       }}
-  //     >
-  //       Delete
-  //     </Button>
-  //   </label>
-  // );
 }
