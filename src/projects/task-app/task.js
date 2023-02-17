@@ -12,7 +12,16 @@ export default function Task({ task, onChange, onDelete }) {
   let taskContent;
 
   if (isEditing) {
-    taskContent = <></>;
+    taskContent = (
+      <>
+        <p>
+          <Input
+            value={text}
+            onChange={setText}
+          />
+        </p>
+      </>
+    );
   } else {
     taskContent = (
       <>
