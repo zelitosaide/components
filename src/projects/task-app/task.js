@@ -85,7 +85,7 @@ export default function Task({ task, onChange, onDelete }) {
           Complete
         </label>
       </p>
-      <p>
+      <p style={{ margin: "5px 0" }}>
         <Button
           onClick={function () {
             if (isEditing) {
