@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /* Border Radius */
+  --border-radius-small: 0.375rem; /* buttons, small thing*/
+  --border-radius-large: 0.5rem;
+  /* End */
+
+  /* Font Size */
+  --main-font-size: 0.8125rem;
+  --small-font-size: 0.6875rem;
+  /* End */
+
+  /* Font Weight */
+  --main-font-weight: 400;
+  --bold-font-weight: 500; /* buttons, titulos */
+  --semibold-font-weight: 600;
+  /* End */
+
+  /* font-family */
+  --font-family: "Montserrat", sans-serif;
+
+  /* Font Color */
+  --main-white-color: rgb(255, 255, 255);
+  --main-font-color: rgb(51, 65, 85);
+  --bold-font-color: rgb(15, 23, 42);
+  --placeholder-font-color: rgb(148, 163, 184);
+  --sub-bold-font-color: rgb(100, 116, 139);
+  /* End */
+
+  /* Icon stroke color */
+  --main-stroke-svg-color: rgb(148, 163, 184);
+  --bold-stroke-svg-color: rgb(100, 116, 139);
+  /* End */
+
+  /* Border Color */
+  --main-border-color: rgba(
+    51,
+    65,
+    85,
+    0.1
+  ); /* incluindo buttons and containers */
+  --divider-border-color: rgb(229, 231, 235);
+  --icon-button-border-color: rgba(15, 23, 42, 0.1); /* only */
+  /* border: 0 solid #e5e7eb; */
+
+  /* Box Shadow */
+  --box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05),
+    0 8px 10px -6px rgba(0, 0, 0, 0.05);
+
+  /* Background button color */
+  /* --background-hover-color: rgb(248, 250, 252);
+  --background-active-color: rgb(237, 242, 247); */
+
+  /* --main-background-color: rgb(243, 114, 44); */
+  /* --main-background-color: var(--bg-color); */
+  /* --main-hover-background-color: rgb(241, 93, 14); */
+  /* --main-hover-background-color: var(--bg-hover); */
+  /* --main-active-background-color: rgb(217, 84, 13); */
+  /* --main-active-background-color: var(--bg-active); */
+
+  /* Outline */
+  /* --main-outline-color: rgb(245, 142, 86); */
+  /* --main-outline-color: var(--outline-color); */
+
+  /* Paddings */
+  --btn-padding-left: 0.75rem;
+  --btn-padding-right: 0.75rem;
+  --btn-padding-bottom: 0.5rem;
+  --btn-padding-top: 0.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  font-family: var(--font-family);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body,
+html {
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a {
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
