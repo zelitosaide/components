@@ -24,10 +24,16 @@ function TaskApp() {
     fetchTasks();
   }, []);
 
-  async function handleAddTask(text) {
+  async function handleAddTask({ text, date, hour }) {
     try {
       setStatus("adding");
-      const task = await addTask({ text: text, done: false });
+      const task = await addTask({
+        text: text,
+        date: date,
+        hour: hour,
+        done: false,
+        isRepeated: false,
+      });
       setStatus("added");
       setTasks([...tasks, task]);
     } catch (error) {
