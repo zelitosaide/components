@@ -109,7 +109,13 @@ export default function Task({ task, onChange, onDelete }) {
             Cancel
           </Button>
         )}
-        <Button>Delete</Button>
+        <Button
+          onClick={function () {
+            onDelete(task._id);
+          }}
+        >
+          Delete
+        </Button>
       </p>
     </>
   );
