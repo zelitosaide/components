@@ -25,6 +25,19 @@ export default function Task({ task, onChange, onDelete }) {
               setIsRepeated(e.target.checked);
             }}
           />
+          Repeat
+        </label>
+      </p>
+      <p>
+        <label>
+          <input
+            type="checkbox"
+            checked={done}
+            onChange={function (e) {
+              setDone(e.target.checked);
+            }}
+          />
+          Complete
         </label>
       </p>
     </>
