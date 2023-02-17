@@ -91,6 +91,18 @@ export default function Task({ task, onChange, onDelete }) {
         >
           {isEditing ? "Save" : "Edit"}
         </Button>
+        {isEditing && (
+          <Button
+            onClick={function () {
+              setIsEditing(false);
+              setText(task.text);
+              setDate(task.date);
+              setHour(task.hour);
+            }}
+          >
+            Cancel
+          </Button>
+        )}
         <Button>Delete</Button>
       </p>
     </>
