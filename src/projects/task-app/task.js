@@ -8,8 +8,6 @@ export default function Task({ task, onChange, onDelete }) {
   const [text, setText] = useState(task.text);
   const [date, setDate] = useState(task.date);
   const [hour, setHour] = useState(task.hour);
-  const [isRepeated, setIsRepeated] = useState(task.isRepeated);
-  const [done, setDone] = useState(task.done);
 
   return (
     <>
@@ -20,9 +18,12 @@ export default function Task({ task, onChange, onDelete }) {
         <label>
           <input
             type="checkbox"
-            checked={isRepeated}
+            checked={task.isRepeated}
             onChange={function (e) {
-              setIsRepeated(e.target.checked);
+              onChange({
+                ...task,
+                isRepeated: e.target.checked,
+              });
             }}
           />
           Repeat
@@ -32,9 +33,12 @@ export default function Task({ task, onChange, onDelete }) {
         <label>
           <input
             type="checkbox"
-            checked={done}
+            checked={task.done}
             onChange={function (e) {
-              setDone(e.target.checked);
+              onChange({
+                ...task,
+                done: e.target.checked,
+              });
             }}
           />
           Complete
