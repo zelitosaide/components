@@ -20,7 +20,9 @@ export default function AddTask({ onAddTask, isAdding }) {
         Task:{" "}
         <Input
           value={text}
-          onChange={setText}
+          onChange={function (e) {
+            setText(e.target.value);
+          }}
           disabled={isAdding}
         />
       </label>
@@ -30,7 +32,9 @@ export default function AddTask({ onAddTask, isAdding }) {
           type="date"
           label="Date"
           value={date}
-          onChange={setDate}
+          onChange={function (e) {
+            setDate(e.target.value);
+          }}
           disabled={isAdding}
         />
       </label>
@@ -40,7 +44,9 @@ export default function AddTask({ onAddTask, isAdding }) {
           type="time"
           label="Hour"
           value={hour}
-          onChange={setHour}
+          onChange={function (e) {
+            setHour(e.target.value);
+          }}
           disabled={isAdding}
         />
       </label>
