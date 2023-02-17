@@ -72,9 +72,8 @@ export default function Task({ task, onChange, onDelete }) {
       </p>
       <p style={{ margin: "2px 0px" }}>
         <label style={{ fontSize: 12 }}>
-          <input
-            type="checkbox"
-            checked={task.done}
+          <Checkbox
+            value={task.done}
             onChange={function (e) {
               onChange({
                 ...task,
