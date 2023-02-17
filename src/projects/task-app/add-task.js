@@ -2,12 +2,12 @@ import { useState } from "react";
 
 import { Button } from "../../components/core/button";
 import { Input } from "../../components/core/input";
-import { formatDate } from "../../utils/utils";
+import { formatDate, formatTime } from "../../utils/utils";
 
 export default function AddTask({ onAddTask, isAdding }) {
   const [text, setText] = useState("");
   const [date, setDate] = useState(formatDate(new Date()));
-  const [hour, setHour] = useState("04:08");
+  const [hour, setHour] = useState(formatTime(new Date()));
   const [isRepeated, setIsRepeated] = useState(false);
 
   return (

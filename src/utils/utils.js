@@ -1,5 +1,5 @@
 export function formatDate(date) {
-  return date.toISOString().split("T")[0];
+  return date.toISOString().slice(0, 10);
 }
 
 export function formatTime(date) {
@@ -7,5 +7,5 @@ export function formatTime(date) {
 }
 
 export function formatDateIntl(date) {
-  return new Intl.DateTimeFormat("pt-PT", { dateStyle: "short" }).format(date);
+  return new Intl.DateTimeFormat("pt-PT", { dateStyle: "full" }).format(date);
 }
