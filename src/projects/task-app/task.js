@@ -2,11 +2,7 @@ import { useState } from "react";
 
 import { Button } from "../../components/core/button";
 import { Input } from "../../components/core/input";
-import {
-  formatDate,
-  formatDateForInputField,
-  formatTimeForInputField,
-} from "../../utils/utils";
+import { formatDate, formatDateForInputField } from "../../utils/utils";
 
 export default function Task({ task, onChange, onDelete }) {
   const [text, setText] = useState(task.text);
