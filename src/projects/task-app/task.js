@@ -39,9 +39,9 @@ export default function Task({ task, onChange, onDelete }) {
   } else {
     taskContent = (
       <>
-        <p>{text}</p>
-        <p>{formatDate(new Date(date))}</p>
-        <p>{hour}</p>
+        <p style={{ margin: "5px 0px" }}>{text}</p>
+        <p style={{ margin: "5px 0px" }}>{formatDate(new Date(date))}</p>
+        <p style={{ margin: "5px 0px" }}>{hour}</p>
       </>
     );
   }
