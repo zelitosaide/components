@@ -16,5 +16,8 @@ export function formatDate(date) {
 export function checkExpirationDate(date) {
   const today = new Date();
 
-  return date.getTime() < today.getTime();
+  return (
+    new Date(formatDateForInputField(date)).getTime() <
+    new Date(formatDateForInputField(today)).getTime()
+  );
 }
