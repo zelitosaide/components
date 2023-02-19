@@ -15,6 +15,15 @@ export function formatDate(date) {
 
 export function checkExpirationDateTime(date, time) {
   const today = new Date();
+  let isExpired;
 
-  return date.getTime() < today.getTime();
+  if (
+    date.getTime() < today.getTime() ||
+    (date.getTime() === today.getTime() &&
+      time < formatTimeForInputField(today))
+  ) {
+    isExpired = true;
+  }
+
+  return isExpired;
 }
