@@ -4,7 +4,7 @@ import { Button } from "../../components/core/button";
 import { Checkbox } from "../../components/core/checkbox";
 import { Input } from "../../components/core/input";
 import {
-  checkExpirationDateTime,
+  checkExpirationDate,
   formatDate,
   formatDateForInputField,
 } from "../../utils/utils";
@@ -15,7 +15,7 @@ export default function Task({ task, onChange, onDelete }) {
   const [hour, setHour] = useState(task.hour);
   const [isEditing, setIsEditing] = useState(false);
   let taskContent;
-  const isExpired = checkExpirationDateTime(new Date(task.date), task.hour);
+  const isExpired = checkExpirationDate(new Date(task.date));
 
   if (isEditing) {
     taskContent = (
