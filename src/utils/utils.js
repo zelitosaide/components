@@ -13,17 +13,8 @@ export function formatDate(date) {
   return new Intl.DateTimeFormat("pt-PT", { dateStyle: "medium" }).format(date);
 }
 
-export function checkExpirationDateTime(date, time) {
+export function checkExpirationDate(date) {
   const today = new Date();
-  let isExpired;
 
-  if (
-    date.getTime() < today.getTime() ||
-    (date.getTime() === today.getTime() &&
-      time < formatTimeForInputField(today))
-  ) {
-    isExpired = true;
-  }
-
-  return isExpired;
+  return date.getTime() < today.getTime();
 }
