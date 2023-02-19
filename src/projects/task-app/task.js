@@ -15,7 +15,8 @@ export default function Task({ task, onChange, onDelete }) {
   const [hour, setHour] = useState(task.hour);
   const [isEditing, setIsEditing] = useState(false);
   let taskContent;
-  const isExpired = checkExpirationDateTime(new Date(task.date));
+  // const isExpired = checkExpirationDateTime(new Date(task.date), task.hour);
+  const isExpired = checkExpirationDateTime(new Date(), task.hour);
 
   if (isEditing) {
     taskContent = (
@@ -63,7 +64,14 @@ export default function Task({ task, onChange, onDelete }) {
           </span>
         </p>
         <p style={{ margin: "5px 0px", fontSize: 12 }}>
-          <span style={{ background: "pink", padding: "1px 4px" }}>{hour}</span>
+          <span
+            style={{
+              background: isExpired ? "#ffcccc" : "#d4f8d3",
+              padding: "1px 4px",
+            }}
+          >
+            {hour}
+          </span>
         </p>
       </>
     );
