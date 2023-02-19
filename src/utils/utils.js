@@ -12,3 +12,9 @@ export function formatTimeForInputField(date) {
 export function formatDate(date) {
   return new Intl.DateTimeFormat("pt-PT", { dateStyle: "medium" }).format(date);
 }
+
+export function checkExpirationDateTime(date, time) {
+  const today = new Date();
+
+  return date.getTime() < today.getTime();
+}

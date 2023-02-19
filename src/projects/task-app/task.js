@@ -3,7 +3,11 @@ import { useState } from "react";
 import { Button } from "../../components/core/button";
 import { Checkbox } from "../../components/core/checkbox";
 import { Input } from "../../components/core/input";
-import { formatDate, formatDateForInputField } from "../../utils/utils";
+import {
+  checkExpirationDateTime,
+  formatDate,
+  formatDateForInputField,
+} from "../../utils/utils";
 
 export default function Task({ task, onChange, onDelete }) {
   const [text, setText] = useState(task.text);
@@ -11,6 +15,7 @@ export default function Task({ task, onChange, onDelete }) {
   const [hour, setHour] = useState(task.hour);
   const [isEditing, setIsEditing] = useState(false);
   let taskContent;
+  const isExpired = checkExpirationDateTime(new Date(task.date));
 
   if (isEditing) {
     taskContent = (
@@ -48,7 +53,12 @@ export default function Task({ task, onChange, onDelete }) {
       <>
         <p style={{ margin: "5px 0px" }}>{text}</p>
         <p style={{ margin: "5px 0px", fontSize: 12 }}>
-          <span style={{ background: "pink", padding: "1px 4px" }}>
+          <span
+            style={{
+              background: isExpired ? "#ffcccc" : "#d4f8d3",
+              padding: "1px 4px",
+            }}
+          >
             {formatDate(new Date(date))}
           </span>
         </p>
