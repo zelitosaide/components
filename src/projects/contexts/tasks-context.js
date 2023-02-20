@@ -60,6 +60,9 @@ function tasksReducer(tasks, action) {
     case "fetched": {
       return [...action.tasks];
     }
+    case "added": {
+      return [...tasks, action.task];
+    }
     default: {
       throw new Error("Unknown action: " + action.type);
     }
