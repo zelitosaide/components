@@ -7,12 +7,15 @@ import {
   formatDateForInputField,
   formatTimeForInputField,
 } from "../../utils/utils";
+import { useTasksEventHandlers } from "../contexts/tasks-context";
 
-export default function AddTask({ onAddTask, isAdding }) {
+export default function AddTask({ isAdding }) {
   const [text, setText] = useState("");
   const [date, setDate] = useState(formatDateForInputField(new Date()));
   const [hour, setHour] = useState(formatTimeForInputField(new Date()));
   const [isRepeated, setIsRepeated] = useState(false);
+
+  const { addTask } = useTasksEventHandlers();
 
   return (
     <>
@@ -62,7 +65,7 @@ export default function AddTask({ onAddTask, isAdding }) {
       <Button
         onClick={function () {
           setText("");
-          onAddTask({ text, date, hour, isRepeated });
+          addTask({ text, date, hour, isRepeated });
         }}
         disabled={isAdding}
       >
