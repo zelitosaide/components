@@ -20,7 +20,7 @@ export default function AddTask() {
 
   const { addTask } = useTasksEventHandlers();
 
-  function resetStates() {
+  function resetFields() {
     setText("");
     setDate("");
     setHour("");
@@ -69,6 +69,7 @@ export default function AddTask() {
           onChange={function (e) {
             setIsRepeated(e.target.checked);
           }}
+          disabled={isAdding}
         />
         Repeat
       </label>
@@ -77,7 +78,7 @@ export default function AddTask() {
           setStatus("adding");
           try {
             await addTask({ text, date, hour, isRepeated });
-            resetStates();
+            resetFields();
           } catch (error) {
             setError(error.message);
           } finally {
