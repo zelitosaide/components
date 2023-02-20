@@ -20,11 +20,12 @@ export default function AddTask() {
 
   const { addTask } = useTasksEventHandlers();
 
-  function resetFields() {
+  function resetStates() {
     setText("");
     setDate("");
     setHour("");
     setIsRepeated(false);
+    setStatus("typing");
   }
 
   return (
@@ -77,6 +78,7 @@ export default function AddTask() {
           setStatus("adding");
           try {
             await addTask({ text, date, hour, isRepeated });
+            resetStates();
           } catch (error) {
             setError(error.message);
           }
