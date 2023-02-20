@@ -11,11 +11,12 @@ export default function Task({ task }) {
   const [date, setDate] = useState(task.date);
   const [hour, setHour] = useState(task.hour);
   const [isEditing, setIsEditing] = useState(false);
-  let taskContent;
+  const { changeTask, deleteTask } = useTasksEventHandlers();
+  const [error, setError] = useState(null);
+
   const isExpired = checkExpirationDate(task.date);
 
-  const { changeTask, deleteTask } = useTasksEventHandlers();
-
+  let taskContent;
   if (isEditing) {
     taskContent = (
       <>
@@ -137,13 +138,19 @@ export default function Task({ task }) {
           </Button>
         )}
         <Button
-          onClick={function () {
-            deleteTask(task._id);
+          onClick={async function () {
+            try {
+              setError(null);
+              await deleteTask(task._id);
+            } catch (error) {
+              setError(error.message);
+            }
           }}
         >
           Delete
         </Button>
       </p>
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </>
   );
 }
