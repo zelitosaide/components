@@ -15,7 +15,7 @@ export default function Task({ task, onChange, onDelete }) {
   const [hour, setHour] = useState(task.hour);
   const [isEditing, setIsEditing] = useState(false);
   let taskContent;
-  const isExpired = checkExpirationDate(new Date(task.date));
+  const isExpired = checkExpirationDate(task.date);
 
   if (isEditing) {
     taskContent = (
