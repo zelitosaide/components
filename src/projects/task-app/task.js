@@ -4,14 +4,17 @@ import { Button } from "../../components/core/button";
 import { Checkbox } from "../../components/core/checkbox";
 import { Input } from "../../components/core/input";
 import { checkExpirationDate, formatDate } from "../../utils/utils";
+import { useTasksEventHandlers } from "../contexts/tasks-context";
 
-export default function Task({ task, onChange, onDelete }) {
+export default function Task({ task }) {
   const [text, setText] = useState(task.text);
   const [date, setDate] = useState(task.date);
   const [hour, setHour] = useState(task.hour);
   const [isEditing, setIsEditing] = useState(false);
   let taskContent;
   const isExpired = checkExpirationDate(task.date);
+
+  const { changeTask, deleteTask } = useTasksEventHandlers();
 
   if (isEditing) {
     taskContent = (
@@ -80,7 +83,7 @@ export default function Task({ task, onChange, onDelete }) {
           <Checkbox
             value={task.isRepeated}
             onChange={function (e) {
-              onChange({
+              changeTask({
                 ...task,
                 isRepeated: e.target.checked,
               });
@@ -94,7 +97,7 @@ export default function Task({ task, onChange, onDelete }) {
           <Checkbox
             value={task.done}
             onChange={function (e) {
-              onChange({
+              changeTask({
                 ...task,
                 done: e.target.checked,
               });
@@ -108,7 +111,7 @@ export default function Task({ task, onChange, onDelete }) {
           onClick={function () {
             if (isEditing) {
               setIsEditing(false);
-              onChange({
+              changeTask({
                 ...task,
                 text: text,
                 date: date,
@@ -135,7 +138,7 @@ export default function Task({ task, onChange, onDelete }) {
         )}
         <Button
           onClick={function () {
-            onDelete(task._id);
+            deleteTask(task._id);
           }}
         >
           Delete
