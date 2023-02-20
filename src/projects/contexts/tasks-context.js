@@ -31,14 +31,8 @@ export function TasksProvider({ children }) {
     fetchTasks();
   }, []);
 
-  async function handleAddTask({ text, date, hour, isRepeated }) {
-    const task = await addTask({
-      text: text,
-      date: date,
-      hour: hour,
-      done: false,
-      isRepeated: isRepeated,
-    });
+  async function handleAddTask(newTask) {
+    const task = await addTask({ ...newTask, done: false });
     dispatch({ type: "added", task: task });
   }
 
