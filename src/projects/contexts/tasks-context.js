@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 
 import { addTask, baseUrl, changeTask, deleteTask } from "../../api";
 
@@ -14,13 +20,13 @@ export function useTasksEventHandlers() {
 }
 
 export function TasksProvider({ children }) {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, dispatch] = useReducer(tasksReducer, []);
 
   useEffect(function () {
     async function fetchTasks() {
       const response = await fetch(baseUrl + "tasks");
       const tasks = await response.json();
-      setTasks(tasks);
+      dispatch({ type: "fetched", tasks: tasks });
     }
     fetchTasks();
   }, []);
@@ -33,37 +39,17 @@ export function TasksProvider({ children }) {
       done: false,
       isRepeated: isRepeated,
     });
-    setTasks([...tasks, task]);
+    dispatch({ type: "added", task: task });
   }
 
   async function handleChangeTask(nextTask) {
-    try {
-      await changeTask(nextTask);
-      setTasks(
-        tasks.map(function (t) {
-          if (t._id === nextTask._id) {
-            return nextTask;
-          } else {
-            return t;
-          }
-        })
-      );
-    } catch (error) {
-      console.log(error);
-    }
+    await changeTask(nextTask);
+    dispatch({ type: "changed", task: nextTask });
   }
 
   async function handleDeleteTask(taskId) {
-    try {
-      await deleteTask(taskId);
-      setTasks(
-        tasks.filter(function (t) {
-          return t._id !== taskId;
-        })
-      );
-    } catch (error) {
-      console.log(error);
-    }
+    await deleteTask(taskId);
+    dispatch({ type: "deleted", id: taskId });
   }
 
   return (
@@ -80,3 +66,5 @@ export function TasksProvider({ children }) {
     </TasksContext.Provider>
   );
 }
+
+function tasksReducer() {}
