@@ -1,23 +1,9 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-  useState,
-} from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 
 import { addTask, baseUrl, changeTask, deleteTask } from "../../api";
 
 const TasksContext = createContext(null);
 const TasksEventHandlersContext = createContext(null);
-
-export function useTasks() {
-  return useContext(TasksContext);
-}
-
-export function useTasksEventHandlers() {
-  return useContext(TasksEventHandlersContext);
-}
 
 export function TasksProvider({ children }) {
   const [tasks, dispatch] = useReducer(tasksReducer, []);
@@ -59,6 +45,14 @@ export function TasksProvider({ children }) {
       </TasksEventHandlersContext.Provider>
     </TasksContext.Provider>
   );
+}
+
+export function useTasks() {
+  return useContext(TasksContext);
+}
+
+export function useTasksEventHandlers() {
+  return useContext(TasksEventHandlersContext);
 }
 
 function tasksReducer() {}
