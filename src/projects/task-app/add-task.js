@@ -25,7 +25,6 @@ export default function AddTask() {
     setDate("");
     setHour("");
     setIsRepeated(false);
-    setStatus("typing");
   }
 
   return (
@@ -81,6 +80,8 @@ export default function AddTask() {
             resetStates();
           } catch (error) {
             setError(error.message);
+          } finally {
+            setStatus("typing");
           }
         }}
         disabled={isAdding}
