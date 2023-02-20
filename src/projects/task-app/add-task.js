@@ -15,9 +15,17 @@ export default function AddTask() {
   const [hour, setHour] = useState(formatTimeForInputField(new Date()));
   const [isRepeated, setIsRepeated] = useState(false);
   const [status, setStatus] = useState("typing");
+  const [error, setError] = useState(null);
   const isAdding = status === "adding";
 
   const { addTask } = useTasksEventHandlers();
+
+  function resetFields() {
+    setText("");
+    setDate("");
+    setHour("");
+    setIsRepeated(false);
+  }
 
   return (
     <>
@@ -66,13 +74,12 @@ export default function AddTask() {
       </label>
       <Button
         onClick={async function () {
-          setText("");
-          setDate("");
-          setHour("");
-          setIsRepeated(false);
           setStatus("adding");
-          await addTask({ text, date, hour, isRepeated });
-          setStatus("added");
+          try {
+            await addTask({ text, date, hour, isRepeated });
+          } catch (error) {
+            setError(error.message);
+          }
         }}
         disabled={isAdding}
       >
