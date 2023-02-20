@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-import { baseUrl } from "../../api";
+import { addTask, baseUrl, changeTask, deleteTask } from "../../api";
 
 const TasksContext = createContext(null);
 
@@ -19,6 +19,53 @@ export function TasksProvider({ children }) {
     }
     fetchTasks();
   }, []);
+
+  async function handleAddTask({ text, date, hour, isRepeated }) {
+    try {
+      // setStatus("adding");
+      const task = await addTask({
+        text: text,
+        date: date,
+        hour: hour,
+        done: false,
+        isRepeated: isRepeated,
+      });
+      // setStatus("added");
+      setTasks([...tasks, task]);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function handleChangeTask(nextTask) {
+    try {
+      await changeTask(nextTask);
+      setTasks(
+        tasks.map(function (t) {
+          if (t._id === nextTask._id) {
+            return nextTask;
+          } else {
+            return t;
+          }
+        })
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function handleDeleteTask(taskId) {
+    try {
+      await deleteTask(taskId);
+      setTasks(
+        tasks.filter(function (t) {
+          return t._id !== taskId;
+        })
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <TasksContext.Provider value={tasks}>{children}</TasksContext.Provider>
