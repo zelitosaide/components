@@ -87,6 +87,7 @@ export default function AddTask() {
       >
         {isAdding ? "Adding task..." : "Add task"}
       </Button>
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </>
   );
 }
