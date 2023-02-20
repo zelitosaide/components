@@ -26,18 +26,15 @@ export function TasksProvider({ children }) {
   }, []);
 
   async function handleAddTask({ text, date, hour, isRepeated }) {
-    try {
-      const task = await addTask({
-        text: text,
-        date: date,
-        hour: hour,
-        done: false,
-        isRepeated: isRepeated,
-      });
-      setTasks([...tasks, task]);
-    } catch (error) {
-      console.log(error);
-    }
+    const task = await addTask({
+      text: text,
+      date: date,
+      hour: hour,
+      done: false,
+      isRepeated: isRepeated,
+    });
+    console.log("ola");
+    setTasks([...tasks, task]);
   }
 
   async function handleChangeTask(nextTask) {
