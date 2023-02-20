@@ -126,6 +126,7 @@ export default function Task({ task }) {
               setIsEditing(true);
             }
           }}
+          disabled={isPending}
         >
           {isEditing ? "Save" : "Edit"}
         </Button>
