@@ -63,6 +63,15 @@ function tasksReducer(tasks, action) {
     case "added": {
       return [...tasks, action.task];
     }
+    case "changed": {
+      return tasks.map(function (t) {
+        if (t._id === action.task._id) {
+          return action.task;
+        } else {
+          return t;
+        }
+      });
+    }
     default: {
       throw new Error("Unknown action: " + action.type);
     }
