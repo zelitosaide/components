@@ -55,4 +55,13 @@ export function useTasksEventHandlers() {
   return useContext(TasksEventHandlersContext);
 }
 
-function tasksReducer() {}
+function tasksReducer(tasks, action) {
+  switch (action.type) {
+    case "fetched": {
+      return [...tasks, ...action.tasks];
+    }
+    default: {
+      throw new Error("Unknown action: " + action.type);
+    }
+  }
+}
