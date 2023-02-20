@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { addTask, baseUrl, changeTask, deleteTask } from "../../api";
 
 const TasksContext = createContext(null);
+const TasksEventHandlersContext = createContext(null);
 
 export function useTasks() {
   return useContext(TasksContext);
@@ -68,6 +69,16 @@ export function TasksProvider({ children }) {
   }
 
   return (
-    <TasksContext.Provider value={tasks}>{children}</TasksContext.Provider>
+    <TasksContext.Provider value={tasks}>
+      <TasksEventHandlersContext.Provider
+        value={{
+          addTask: handleAddTask,
+          changeTask: handleChangeTask,
+          deleteTask: handleDeleteTask,
+        }}
+      >
+        {children}
+      </TasksEventHandlersContext.Provider>
+    </TasksContext.Provider>
   );
 }
