@@ -151,6 +151,7 @@ export default function Task({ task }) {
               setStatus("idle");
             }
           }}
+          disabled={isPending}
         >
           {isPending ? "Delete..." : "Delete"}
         </Button>
