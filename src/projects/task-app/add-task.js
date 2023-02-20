@@ -76,6 +76,7 @@ export default function AddTask() {
       <Button
         onClick={async function () {
           setStatus("adding");
+          setError(null);
           try {
             await addTask({ text, date, hour, isRepeated });
             resetFields();
