@@ -83,7 +83,6 @@ function TaskApp() {
         isAdding={isAdding}
       />
       <TaskList
-        tasks={tasks}
         onChangeTask={handleChangeTask}
         onDeleteTask={handleDeleteTask}
       />

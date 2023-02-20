@@ -1,6 +1,11 @@
+import { useContext } from "react";
+
+import { TasksContext } from "../contexts/tasks-context";
 import Task from "./task";
 
-export default function TaskList({ tasks, onChangeTask, onDeleteTask }) {
+export default function TaskList({ onChangeTask, onDeleteTask }) {
+  const tasks = useContext(TasksContext);
+
   return (
     <ul>
       {tasks.map(function (task) {
