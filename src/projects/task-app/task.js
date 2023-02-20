@@ -13,6 +13,8 @@ export default function Task({ task }) {
   const [isEditing, setIsEditing] = useState(false);
   const { changeTask, deleteTask } = useTasksEventHandlers();
   const [error, setError] = useState(null);
+  const [status, setStatus] = useState("idle");
+  const isPending = status === "pending";
 
   const isExpired = checkExpirationDate(task.date);
 
@@ -140,14 +142,17 @@ export default function Task({ task }) {
         <Button
           onClick={async function () {
             try {
+              setStatus("pending");
               setError(null);
               await deleteTask(task._id);
             } catch (error) {
               setError(error.message);
+            } finally {
+              setStatus("idle");
             }
           }}
         >
-          Delete
+          {isPending ? "Delete..." : "Delete"}
         </Button>
       </p>
       {error && <p style={{ color: "red" }}>{error}</p>}
