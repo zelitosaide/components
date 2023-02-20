@@ -33,7 +33,6 @@ export function TasksProvider({ children }) {
       done: false,
       isRepeated: isRepeated,
     });
-    console.log("ola");
     setTasks([...tasks, task]);
   }
 
