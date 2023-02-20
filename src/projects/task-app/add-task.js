@@ -9,11 +9,13 @@ import {
 } from "../../utils/utils";
 import { useTasksEventHandlers } from "../contexts/tasks-context";
 
-export default function AddTask({ isAdding }) {
+export default function AddTask() {
   const [text, setText] = useState("");
   const [date, setDate] = useState(formatDateForInputField(new Date()));
   const [hour, setHour] = useState(formatTimeForInputField(new Date()));
   const [isRepeated, setIsRepeated] = useState(false);
+  const [status, setStatus] = useState("typing");
+  const isAdding = status === "adding";
 
   const { addTask } = useTasksEventHandlers();
 
@@ -63,12 +65,14 @@ export default function AddTask({ isAdding }) {
         Repeat
       </label>
       <Button
-        onClick={function () {
+        onClick={async function () {
           setText("");
           setDate("");
           setHour("");
           setIsRepeated(false);
-          addTask({ text, date, hour, isRepeated });
+          setStatus("adding");
+          await addTask({ text, date, hour, isRepeated });
+          setStatus("added");
         }}
         disabled={isAdding}
       >

@@ -27,7 +27,6 @@ export function TasksProvider({ children }) {
 
   async function handleAddTask({ text, date, hour, isRepeated }) {
     try {
-      // setStatus("adding");
       const task = await addTask({
         text: text,
         date: date,
@@ -35,7 +34,6 @@ export function TasksProvider({ children }) {
         done: false,
         isRepeated: isRepeated,
       });
-      // setStatus("added");
       setTasks([...tasks, task]);
     } catch (error) {
       console.log(error);
