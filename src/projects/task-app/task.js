@@ -91,6 +91,7 @@ export default function Task({ task }) {
                 isRepeated: e.target.checked,
               });
             }}
+            disabled={isPending}
           />
           Repeat
         </label>
@@ -105,6 +106,7 @@ export default function Task({ task }) {
                 done: e.target.checked,
               });
             }}
+            disabled={isPending}
           />
           Complete
         </label>
