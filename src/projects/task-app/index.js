@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import AddTask from "./add-task";
 import TaskList from "./task-list";
 
-import { addTask, baseUrl, changeTask, deleteTask } from "../../api";
+import { addTask, changeTask, deleteTask } from "../../api";
 import { TasksProvider } from "../contexts/tasks-context";
 
 export default function Index() {
@@ -19,15 +19,6 @@ function TaskApp() {
   const [status, setStatus] = useState("typing");
 
   const isAdding = status === "adding";
-
-  useEffect(function () {
-    async function fetchTasks() {
-      const response = await fetch(baseUrl + "tasks");
-      const tasks = await response.json();
-      setTasks(tasks);
-    }
-    fetchTasks();
-  }, []);
 
   async function handleAddTask({ text, date, hour, isRepeated }) {
     try {
