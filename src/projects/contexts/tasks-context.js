@@ -72,6 +72,11 @@ function tasksReducer(tasks, action) {
         }
       });
     }
+    case "deleted": {
+      return tasks.filter(function (t) {
+        return t._id !== action.id;
+      });
+    }
     default: {
       throw new Error("Unknown action: " + action.type);
     }
