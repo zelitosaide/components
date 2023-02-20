@@ -9,6 +9,10 @@ export function useTasks() {
   return useContext(TasksContext);
 }
 
+export function useTasksEventHandlers() {
+  return useContext(TasksEventHandlersContext);
+}
+
 export function TasksProvider({ children }) {
   const [tasks, setTasks] = useState([]);
 
