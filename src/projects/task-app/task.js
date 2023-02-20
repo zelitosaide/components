@@ -3,11 +3,7 @@ import { useState } from "react";
 import { Button } from "../../components/core/button";
 import { Checkbox } from "../../components/core/checkbox";
 import { Input } from "../../components/core/input";
-import {
-  checkExpirationDate,
-  formatDate,
-  formatDateForInputField,
-} from "../../utils/utils";
+import { checkExpirationDate, formatDate } from "../../utils/utils";
 
 export default function Task({ task, onChange, onDelete }) {
   const [text, setText] = useState(task.text);
@@ -31,7 +27,7 @@ export default function Task({ task, onChange, onDelete }) {
         <p style={{ margin: "5px 0px" }}>
           <Input
             type="date"
-            value={formatDateForInputField(new Date(date))}
+            value={date}
             onChange={function (e) {
               setDate(e.target.value);
             }}
