@@ -1,7 +1,7 @@
 import { useTasks } from "../contexts/tasks-context";
 import Task from "./task";
 
-export default function TaskList({ onChangeTask, onDeleteTask }) {
+export default function TaskList({ error, setError }) {
   const tasks = useTasks();
 
   return (
@@ -11,8 +11,8 @@ export default function TaskList({ onChangeTask, onDeleteTask }) {
           <li key={task._id}>
             <Task
               task={task}
-              onChange={onChangeTask}
-              onDelete={onDeleteTask}
+              error={error}
+              setError={setError}
             />
           </li>
         );
