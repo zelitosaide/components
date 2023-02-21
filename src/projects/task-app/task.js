@@ -114,15 +114,20 @@ export default function Task({ task }) {
       </p>
       <p style={{ margin: "5px 0" }}>
         <Button
-          onClick={function () {
+          onClick={async function () {
             if (isEditing) {
               setIsEditing(false);
-              changeTask({
-                ...task,
-                text: text,
-                date: date,
-                hour: hour,
-              });
+              try {
+                setStatus("pending");
+                setPressedComponent("save");
+                setError(null);
+                await changeTask({ ...task, text, date, hour });
+              } catch (error) {
+                setError(error.message);
+              } finally {
+                setStatus("idle");
+                setPressedComponent("");
+              }
             } else {
               setIsEditing(true);
             }
