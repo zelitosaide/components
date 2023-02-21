@@ -6,7 +6,7 @@ import { Input } from "../../components/core/input";
 import { checkExpirationDate, formatDate } from "../../utils/utils";
 import { useTasksEventHandlers } from "../contexts/tasks-context";
 
-export default function Task({ task, error, setError }) {
+export default function Task({ task, setError }) {
   const [text, setText] = useState(task.text);
   const [date, setDate] = useState(task.date);
   const [hour, setHour] = useState(task.hour);
@@ -174,7 +174,6 @@ export default function Task({ task, error, setError }) {
           {pressedComponent === "delete" ? "Delete..." : "Delete"}
         </Button>
       </p>
-      {error && <p style={{ color: "red" }}>{error}</p>}
     </>
   );
 }
