@@ -3,7 +3,7 @@ import Task from "./task";
 export default function TaskList({ tasks, title }) {
   return (
     <div style={{ backgroundColor: "#1D1E22" }}>
-      <h4>{title}</h4>
+      <h2 style={{ color: "white", fontSize: 14, fontWeight: 500 }}>{title}</h2>
       <ul
         style={{
           listStyleType: "none",
