@@ -58,21 +58,20 @@ export default function Task({ task }) {
     );
   } else {
     taskContent = (
-      <>
-        <span style={{ fontSize: 12 }}>{text}</span>
+      <div style={{ fontSize: 12 }}>
+        {text}
         <i
           style={{
             color: isExpired ? "#fd8468" : "hsla(0, 0%, 100%, 0.4)",
             fontSize: 11,
             display: "block",
-            marginLeft: 26,
-            marginTop: 4,
             fontWeight: 300,
+            marginTop: 3,
           }}
         >
           {formatDate(new Date(date))}, {hour}
         </i>
-      </>
+      </div>
     );
   }
 
@@ -93,7 +92,8 @@ export default function Task({ task }) {
           width: 22,
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
+          paddingTop: 1,
+          marginRight: 4,
         }}
       >
         <FontAwesomeIcon
@@ -102,8 +102,9 @@ export default function Task({ task }) {
           color="hsla(0, 0%, 100%, 0.09)"
         />
       </div>
-      {taskContent}
-      {/* <p style={{ margin: "2px 0px" }}>
+      <div>
+        {taskContent}
+        {/* <p style={{ margin: "2px 0px" }}>
         <label style={{ fontSize: 12 }}>
           <Checkbox
             value={task.isRepeated}
@@ -119,7 +120,7 @@ export default function Task({ task }) {
         </label>
       </p> */}
 
-      {/* <p style={{ margin: "5px 0" }}>
+        {/* <p style={{ margin: "5px 0" }}>
         <Button
           onClick={async function () {
             if (isEditing) {
@@ -180,6 +181,7 @@ export default function Task({ task }) {
           {pressedComponent === "delete" ? "Delete..." : "Delete"}
         </Button>
       </p> */}
+      </div>
     </div>
   );
 }
