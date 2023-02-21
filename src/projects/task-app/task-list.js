@@ -9,7 +9,7 @@ export default function TaskList({ tasks, title }) {
           fontSize: 14,
           fontWeight: 500,
           padding: 0,
-          margin: 0,
+          marginTop: 0,
         }}
       >
         {title}
