@@ -24,7 +24,7 @@ function TaskApp() {
   });
 
   return (
-    <>
+    <div style={{ color: "hsla(0, 0%, 100%, 0.7)" }}>
       <AddTask />
       {uncompletedTasks.length > 0 && (
         <>
@@ -39,6 +39,6 @@ function TaskApp() {
         </>
       )}
       {error && <p style={{ color: "red" }}>{error}</p>}
-    </>
+    </div>
   );
 }
