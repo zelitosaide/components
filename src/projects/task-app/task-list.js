@@ -1,7 +1,7 @@
 import { useTasks } from "../contexts/tasks-context";
 import Task from "./task";
 
-export default function TaskList({ setError }) {
+export default function TaskList() {
   const tasks = useTasks();
 
   return (
@@ -9,10 +9,7 @@ export default function TaskList({ setError }) {
       {tasks.map(function (task) {
         return (
           <li key={task._id}>
-            <Task
-              task={task}
-              setError={setError}
-            />
+            <Task task={task} />
           </li>
         );
       })}
