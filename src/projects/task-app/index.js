@@ -26,7 +26,7 @@ function TaskApp() {
   return (
     <div style={{ color: "hsla(0, 0%, 100%, 0.7)" }}>
       <AddTask />
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", gap: 30, margin: 20 }}>
         {uncompletedTasks.length > 0 && (
           <div>
             <TaskList
