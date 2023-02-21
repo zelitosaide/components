@@ -12,8 +12,8 @@ export default function Index() {
 }
 
 function TaskApp() {
-  const { error } = useError();
   const tasks = useTasks();
+  const { error } = useError();
 
   const uncompletedTasks = tasks.filter(function (task) {
     return !task.done;
