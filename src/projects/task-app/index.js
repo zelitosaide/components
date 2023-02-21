@@ -1,7 +1,7 @@
 import AddTask from "./add-task";
 import TaskList from "./task-list";
 
-import { TasksProvider, useError } from "../contexts/tasks-context";
+import { TasksProvider, useError, useTasks } from "../contexts/tasks-context";
 
 export default function Index() {
   return (
@@ -13,11 +13,15 @@ export default function Index() {
 
 function TaskApp() {
   const { error } = useError();
+  const tasks = useTasks();
 
   return (
     <>
       <AddTask />
-      <TaskList />
+      <h3>Uncompleted tasks</h3>
+      <TaskList tasks={tasks} />
+      <h3>Completed tasks</h3>
+      <TaskList tasks={tasks} />
       {error && <p style={{ color: "red" }}>{error}</p>}
     </>
   );
