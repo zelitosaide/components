@@ -2,7 +2,7 @@ import Task from "./task";
 
 export default function TaskList({ tasks, title }) {
   return (
-    <div style={{ backgroundColor: "#1D1E22", padding: 8 }}>
+    <div style={{ backgroundColor: "#1D1E22", padding: "14px 16px" }}>
       <h2
         style={{
           color: "white",
