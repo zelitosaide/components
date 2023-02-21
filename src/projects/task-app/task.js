@@ -58,26 +58,14 @@ export default function Task({ task }) {
     taskContent = (
       <>
         <p style={{ margin: "5px 0px" }}>{text}</p>
-        <p style={{ margin: "5px 0px", fontSize: 12 }}>
-          <span
-            style={{
-              background: isExpired ? "#ffcccc" : "#d4f8d3",
-              padding: "1px 4px",
-            }}
-          >
-            {formatDate(new Date(date))}
-          </span>
-        </p>
-        <p style={{ margin: "5px 0px", fontSize: 12 }}>
-          <span
-            style={{
-              background: isExpired ? "#ffcccc" : "#d4f8d3",
-              padding: "1px 4px",
-            }}
-          >
-            {hour}
-          </span>
-        </p>
+        <small
+          style={{
+            color: isExpired ? "rgb(252, 88, 50)" : "hsl(119, 72%, 35%)",
+            fontSize: 11,
+          }}
+        >
+          {formatDate(new Date(date))}, {hour}
+        </small>
       </>
     );
   }
