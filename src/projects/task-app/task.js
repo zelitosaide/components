@@ -58,17 +58,18 @@ export default function Task({ task }) {
     taskContent = (
       <>
         <span style={{ fontSize: 12 }}>{text}</span>
-        <small
+        <i
           style={{
-            color: isExpired ? "rgb(252, 88, 50)" : "hsl(119, 72%, 35%)",
+            color: isExpired ? "#fd8468" : "hsla(0, 0%, 100%, 0.4)",
             fontSize: 11,
             display: "block",
             marginLeft: 26,
             marginTop: 4,
+            fontWeight: 300,
           }}
         >
           {formatDate(new Date(date))}, {hour}
-        </small>
+        </i>
       </>
     );
   }

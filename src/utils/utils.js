@@ -10,7 +10,7 @@ export function formatTimeForInputField(date) {
 }
 
 export function formatDate(date) {
-  return new Intl.DateTimeFormat("pt-PT", { dateStyle: "medium" }).format(date);
+  return new Intl.DateTimeFormat("pt-PT", { dateStyle: "long" }).format(date);
 }
 
 export function checkExpirationDate(date) {
