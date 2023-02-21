@@ -11,7 +11,8 @@
 
 body {
   margin: 0;
-  background: hsl(0, 0%, 10%);
+  /* background: hsl(0, 0%, 10%); */
+  background: #131417;
   /* background-color: rgb(252, 88, 50); */
   /* background-color: hsla(0, 0%, 100%, 0.08) */
 }

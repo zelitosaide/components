@@ -8,7 +8,7 @@ export default function TaskList({ tasks }) {
           <li
             key={task._id}
             style={{
-              backgroundColor: "hsla(0, 0%, 100%, 0.08)",
+              backgroundColor: "#1D1E22",
               padding: 0,
               margin: 0,
             }}
