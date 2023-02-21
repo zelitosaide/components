@@ -5,7 +5,7 @@ export default function TaskList() {
   const tasks = useTasks();
 
   return (
-    <ul>
+    <ul style={{ paddingLeft: 20 }}>
       {tasks.map(function (task) {
         return (
           <li key={task._id}>
