@@ -57,7 +57,7 @@ export default function Task({ task }) {
   } else {
     taskContent = (
       <>
-        <p style={{ margin: "5px 0px" }}>{text}</p>
+        <span style={{ display: "block" }}>{text}</span>
         <small
           style={{
             color: isExpired ? "rgb(252, 88, 50)" : "hsl(119, 72%, 35%)",
