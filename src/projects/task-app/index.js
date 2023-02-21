@@ -28,8 +28,10 @@ function TaskApp() {
       <AddTask />
       {uncompletedTasks.length > 0 && (
         <>
-          <h3>Uncompleted tasks</h3>
-          <TaskList tasks={uncompletedTasks} />
+          <TaskList
+            tasks={uncompletedTasks}
+            title="Uncompleted tasks"
+          />
         </>
       )}
       {completedTasks.length > 0 && (
