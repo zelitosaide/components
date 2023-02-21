@@ -148,6 +148,7 @@ export default function Task({ task }) {
               setDate(task.date);
               setHour(task.hour);
             }}
+            disabled={isPending}
           >
             Cancel
           </Button>
