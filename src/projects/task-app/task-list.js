@@ -2,8 +2,18 @@ import Task from "./task";
 
 export default function TaskList({ tasks, title }) {
   return (
-    <div style={{ backgroundColor: "#1D1E22" }}>
-      <h2 style={{ color: "white", fontSize: 14, fontWeight: 500 }}>{title}</h2>
+    <div style={{ backgroundColor: "#1D1E22", padding: 8 }}>
+      <h2
+        style={{
+          color: "white",
+          fontSize: 14,
+          fontWeight: 500,
+          padding: 0,
+          margin: 0,
+        }}
+      >
+        {title}
+      </h2>
       <ul
         style={{
           listStyleType: "none",
