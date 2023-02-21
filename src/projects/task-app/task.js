@@ -116,12 +116,12 @@ export default function Task({ task }) {
         <Button
           onClick={async function () {
             if (isEditing) {
-              setIsEditing(false);
               try {
                 setStatus("pending");
                 setPressedComponent("save");
                 setError(null);
                 await changeTask({ ...task, text, date, hour });
+                setIsEditing(false);
               } catch (error) {
                 setError(error.message);
               } finally {
