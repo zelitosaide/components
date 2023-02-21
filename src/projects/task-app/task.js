@@ -29,6 +29,7 @@ export default function Task({ task }) {
             onChange={function (e) {
               setText(e.target.value);
             }}
+            disabled={isPending}
           />
         </p>
         <p style={{ margin: "5px 0px" }}>
@@ -38,6 +39,7 @@ export default function Task({ task }) {
             onChange={function (e) {
               setDate(e.target.value);
             }}
+            disabled={isPending}
           />
         </p>
         <p style={{ margin: "5px 0px" }}>
@@ -47,6 +49,7 @@ export default function Task({ task }) {
             onChange={function (e) {
               setHour(e.target.value);
             }}
+            disabled={isPending}
           />
         </p>
       </>
