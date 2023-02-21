@@ -28,7 +28,7 @@ export default function AddTask() {
   }
 
   return (
-    <>
+    <div style={{ backgroundColor: "hsla(0, 0%, 100%, 0.08)" }}>
       <label style={{ display: "block", marginBottom: 10 }}>
         Task:{" "}
         <Input
@@ -90,6 +90,6 @@ export default function AddTask() {
       >
         {isAdding ? "Adding task..." : "Add task"}
       </Button>
-    </>
+    </div>
   );
 }
