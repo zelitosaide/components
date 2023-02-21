@@ -7,7 +7,7 @@ import {
   formatDateForInputField,
   formatTimeForInputField,
 } from "../../utils/utils";
-import { useTasksEventHandlers } from "../contexts/tasks-context";
+import { useError, useTasksEventHandlers } from "../contexts/tasks-context";
 
 export default function AddTask() {
   const [text, setText] = useState("");
@@ -15,7 +15,7 @@ export default function AddTask() {
   const [hour, setHour] = useState(formatTimeForInputField(new Date()));
   const [isRepeated, setIsRepeated] = useState(false);
   const [status, setStatus] = useState("typing");
-  const [error, setError] = useState(null);
+  const { error, setError } = useError();
   const isAdding = status === "adding";
 
   const { addTask } = useTasksEventHandlers();
