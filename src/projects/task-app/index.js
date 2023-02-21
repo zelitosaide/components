@@ -1,9 +1,7 @@
-import { useState } from "react";
-
 import AddTask from "./add-task";
 import TaskList from "./task-list";
 
-import { TasksProvider } from "../contexts/tasks-context";
+import { TasksProvider, useError } from "../contexts/tasks-context";
 
 export default function Index() {
   return (
@@ -14,12 +12,12 @@ export default function Index() {
 }
 
 function TaskApp() {
-  const [error, setError] = useState(null);
+  const { error } = useError();
 
   return (
     <>
       <AddTask />
-      <TaskList setError={setError} />
+      <TaskList />
       {error && <p style={{ color: "red" }}>{error}</p>}
     </>
   );
