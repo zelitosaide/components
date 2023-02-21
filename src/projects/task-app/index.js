@@ -15,13 +15,21 @@ function TaskApp() {
   const { error } = useError();
   const tasks = useTasks();
 
+  const uncompletedTasks = tasks.filter(function (task) {
+    return !task.done;
+  });
+
+  const completedTasks = tasks.filter(function (task) {
+    return task.done;
+  });
+
   return (
     <>
       <AddTask />
       <h3>Uncompleted tasks</h3>
-      <TaskList tasks={tasks} />
+      <TaskList tasks={uncompletedTasks} />
       <h3>Completed tasks</h3>
-      <TaskList tasks={tasks} />
+      <TaskList tasks={completedTasks} />
       {error && <p style={{ color: "red" }}>{error}</p>}
     </>
   );
