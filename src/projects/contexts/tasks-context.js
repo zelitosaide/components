@@ -49,7 +49,9 @@ export function TasksProvider({ children }) {
           deleteTask: handleDeleteTask,
         }}
       >
-        {children}
+        <ErrorContext.Provider value={{ error, setError }}>
+          {children}
+        </ErrorContext.Provider>
       </TasksEventHandlersContext.Provider>
     </TasksContext.Provider>
   );
