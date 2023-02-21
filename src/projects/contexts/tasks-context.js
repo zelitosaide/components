@@ -65,6 +65,10 @@ export function useTasksEventHandlers() {
   return useContext(TasksEventHandlersContext);
 }
 
+export function useError() {
+  return useContext(ErrorContext);
+}
+
 function tasksReducer(tasks, action) {
   switch (action.type) {
     case "fetched": {
