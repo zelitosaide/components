@@ -5,6 +5,7 @@ export function Checkbox({ value, onChange, disabled }) {
       checked={value}
       onChange={onChange}
       disabled={disabled}
+      style={{ marginRight: 8 }}
     />
   );
 }
