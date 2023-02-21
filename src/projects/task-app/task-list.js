@@ -26,8 +26,10 @@ export default function TaskList({ tasks, title }) {
             <li
               key={task._id}
               style={{
-                padding: 0,
-                margin: 0,
+                marginBottom: 10,
+                backgroundColor: "hsla(0, 0%, 100%, 0.006)",
+                padding: 6,
+                borderRadius: 4,
               }}
             >
               <Task task={task} />
