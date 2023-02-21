@@ -6,13 +6,12 @@ import { Input } from "../../components/core/input";
 import { checkExpirationDate, formatDate } from "../../utils/utils";
 import { useTasksEventHandlers } from "../contexts/tasks-context";
 
-export default function Task({ task }) {
+export default function Task({ task, error, setError }) {
   const [text, setText] = useState(task.text);
   const [date, setDate] = useState(task.date);
   const [hour, setHour] = useState(task.hour);
   const [isEditing, setIsEditing] = useState(false);
   const { changeTask, deleteTask } = useTasksEventHandlers();
-  const [error, setError] = useState(null);
   const [status, setStatus] = useState("idle");
   const [pressedComponent, setPressedComponent] = useState("");
   const isPending = status === "pending";
