@@ -103,7 +103,7 @@ export default function Task({ task }) {
         </label>
       </p> */}
 
-      <p style={{ margin: "5px 0" }}>
+      {/* <p style={{ margin: "5px 0" }}>
         <Button
           onClick={async function () {
             if (isEditing) {
@@ -163,7 +163,7 @@ export default function Task({ task }) {
         >
           {pressedComponent === "delete" ? "Delete..." : "Delete"}
         </Button>
-      </p>
+      </p> */}
     </>
   );
 }
