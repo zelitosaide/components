@@ -102,7 +102,7 @@ export default function Task({ task }) {
           color="hsla(0, 0%, 100%, 0.09)"
         />
       </div>
-      <div>
+      <div style={{ paddingRight: 10 }}>
         {taskContent}
         {/* <p style={{ margin: "2px 0px" }}>
         <label style={{ fontSize: 12 }}>
