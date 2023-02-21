@@ -12,4 +12,5 @@
 body {
   margin: 0;
   background: hsl(0, 0%, 10%);
+  /* background-color: hsla(0, 0%, 100%, 0.08) */
 }
