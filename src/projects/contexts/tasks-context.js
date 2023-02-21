@@ -1,12 +1,20 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 
 import { addTask, baseUrl, changeTask, deleteTask } from "../../api";
 
 const TasksContext = createContext(null);
 const TasksEventHandlersContext = createContext(null);
+const ErrorContext = createContext(null);
 
 export function TasksProvider({ children }) {
   const [tasks, dispatch] = useReducer(tasksReducer, []);
+  const [error, setError] = useState(null);
 
   useEffect(function () {
     async function fetchTasks() {
