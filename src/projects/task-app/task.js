@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { Button } from "../../components/core/button";
 import { Checkbox } from "../../components/core/checkbox";
 import { Input } from "../../components/core/input";
 import { checkExpirationDate, formatDate } from "../../utils/utils";
 import { useError, useTasksEventHandlers } from "../contexts/tasks-context";
+import { faGripVertical } from "@fortawesome/free-solid-svg-icons";
 
 export default function Task({ task }) {
   const [text, setText] = useState(task.text);
@@ -76,7 +78,7 @@ export default function Task({ task }) {
 
   return (
     <>
-      <Checkbox
+      {/* <Checkbox
         value={task.done}
         onChange={function (e) {
           changeTask({
@@ -85,6 +87,11 @@ export default function Task({ task }) {
           });
         }}
         disabled={isPending}
+      /> */}
+      <FontAwesomeIcon
+        style={{ fontSize: 12, marginRight: 6, marginLeft: 6 }}
+        icon={faGripVertical}
+        color="hsla(0, 0%, 100%, 0.09)"
       />
       {taskContent}
       {/* <p style={{ margin: "2px 0px" }}>
