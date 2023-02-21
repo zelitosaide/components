@@ -134,7 +134,11 @@ export default function Task({ task }) {
           }}
           disabled={isPending}
         >
-          {isEditing ? "Save" : "Edit"}
+          {isEditing
+            ? pressedComponent === "save"
+              ? "Save..."
+              : "Save"
+            : "Edit"}
         </Button>
         {isEditing && (
           <Button
