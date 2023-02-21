@@ -77,7 +77,7 @@ export default function Task({ task }) {
   }
 
   return (
-    <>
+    <div style={{ display: "flex" }}>
       {/* <Checkbox
         value={task.done}
         onChange={function (e) {
@@ -88,11 +88,20 @@ export default function Task({ task }) {
         }}
         disabled={isPending}
       /> */}
-      <FontAwesomeIcon
-        style={{ fontSize: 12, marginRight: 6, marginLeft: 6 }}
-        icon={faGripVertical}
-        color="hsla(0, 0%, 100%, 0.09)"
-      />
+      <div
+        style={{
+          width: 22,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <FontAwesomeIcon
+          style={{ fontSize: 16 }}
+          icon={faGripVertical}
+          color="hsla(0, 0%, 100%, 0.09)"
+        />
+      </div>
       {taskContent}
       {/* <p style={{ margin: "2px 0px" }}>
         <label style={{ fontSize: 12 }}>
@@ -171,6 +180,6 @@ export default function Task({ task }) {
           {pressedComponent === "delete" ? "Delete..." : "Delete"}
         </Button>
       </p> */}
-    </>
+    </div>
   );
 }
