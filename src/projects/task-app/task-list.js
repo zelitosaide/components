@@ -2,7 +2,7 @@ import Task from "./task";
 
 export default function TaskList({ tasks, title }) {
   return (
-    <div style={{ backgroundColor: "#1D1E22", padding: "14px 16px" }}>
+    <div style={{ backgroundColor: "#1D1E22", padding: 20, margin: 20 }}>
       <h2
         style={{
           color: "white",
@@ -10,6 +10,7 @@ export default function TaskList({ tasks, title }) {
           fontWeight: 500,
           padding: 0,
           marginTop: 0,
+          marginBottom: 20,
         }}
       >
         {title}
