@@ -4,9 +4,9 @@ import { Button } from "../../components/core/button";
 import { Checkbox } from "../../components/core/checkbox";
 import { Input } from "../../components/core/input";
 import { checkExpirationDate, formatDate } from "../../utils/utils";
-import { useTasksEventHandlers } from "../contexts/tasks-context";
+import { useError, useTasksEventHandlers } from "../contexts/tasks-context";
 
-export default function Task({ task, setError }) {
+export default function Task({ task }) {
   const [text, setText] = useState(task.text);
   const [date, setDate] = useState(task.date);
   const [hour, setHour] = useState(task.hour);
@@ -15,6 +15,7 @@ export default function Task({ task, setError }) {
   const [status, setStatus] = useState("idle");
   const [pressedComponent, setPressedComponent] = useState("");
   const isPending = status === "pending";
+  const { setError } = useError();
 
   const isExpired = checkExpirationDate(task.date);
 
