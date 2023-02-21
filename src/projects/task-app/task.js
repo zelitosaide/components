@@ -145,13 +145,14 @@ export default function Task({ task }) {
         </Button>
         {isEditing && (
           <Button
+            disabled={isPending}
+            style={{ backgroundColor: "rgb(252, 88, 50)" }}
             onClick={function () {
               setIsEditing(false);
               setText(task.text);
               setDate(task.date);
               setHour(task.hour);
             }}
-            disabled={isPending}
           >
             Cancel
           </Button>
