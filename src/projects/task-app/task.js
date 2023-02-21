@@ -57,11 +57,12 @@ export default function Task({ task }) {
   } else {
     taskContent = (
       <>
-        <span style={{ display: "block", fontSize: 12 }}>{text}</span>
+        <span style={{ fontSize: 12 }}>{text}</span>
         <small
           style={{
             color: isExpired ? "rgb(252, 88, 50)" : "hsl(119, 72%, 35%)",
-            fontSize: 10,
+            fontSize: 11,
+            display: "block",
           }}
         >
           {formatDate(new Date(date))}, {hour}
@@ -72,6 +73,16 @@ export default function Task({ task }) {
 
   return (
     <>
+      <Checkbox
+        value={task.done}
+        onChange={function (e) {
+          changeTask({
+            ...task,
+            done: e.target.checked,
+          });
+        }}
+        disabled={isPending}
+      />
       {taskContent}
       <p style={{ margin: "2px 0px" }}>
         <label style={{ fontSize: 12 }}>
@@ -88,21 +99,7 @@ export default function Task({ task }) {
           Repeat
         </label>
       </p>
-      <p style={{ margin: "2px 0px" }}>
-        <label style={{ fontSize: 12 }}>
-          <Checkbox
-            value={task.done}
-            onChange={function (e) {
-              changeTask({
-                ...task,
-                done: e.target.checked,
-              });
-            }}
-            disabled={isPending}
-          />
-          Complete
-        </label>
-      </p>
+
       <p style={{ margin: "5px 0" }}>
         <Button
           onClick={async function () {
