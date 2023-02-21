@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import AddTask from "./add-task";
 import TaskList from "./task-list";
 
@@ -12,10 +14,15 @@ export default function Index() {
 }
 
 function TaskApp() {
+  const [error, setError] = useState(null);
+
   return (
     <>
       <AddTask />
-      <TaskList />
+      <TaskList
+        error={error}
+        setError={setError}
+      />
     </>
   );
 }
