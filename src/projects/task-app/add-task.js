@@ -15,7 +15,7 @@ export default function AddTask() {
   const [hour, setHour] = useState(formatTimeForInputField(new Date()));
   const [isRepeated, setIsRepeated] = useState(false);
   const [status, setStatus] = useState("typing");
-  const { error, setError } = useError();
+  const { setError } = useError();
   const isAdding = status === "adding";
 
   const { addTask } = useTasksEventHandlers();
@@ -90,7 +90,6 @@ export default function AddTask() {
       >
         {isAdding ? "Adding task..." : "Add task"}
       </Button>
-      {error && <p style={{ color: "red" }}>{error}</p>}
     </>
   );
 }
