@@ -87,7 +87,7 @@ export default function Task({ task }) {
         disabled={isPending}
       />
       {taskContent}
-      <p style={{ margin: "2px 0px" }}>
+      {/* <p style={{ margin: "2px 0px" }}>
         <label style={{ fontSize: 12 }}>
           <Checkbox
             value={task.isRepeated}
@@ -101,7 +101,7 @@ export default function Task({ task }) {
           />
           Repeat
         </label>
-      </p>
+      </p> */}
 
       <p style={{ margin: "5px 0" }}>
         <Button
