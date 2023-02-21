@@ -28,8 +28,12 @@ function TaskApp() {
       <AddTask />
       <h3>Uncompleted tasks</h3>
       <TaskList tasks={uncompletedTasks} />
-      <h3>Completed tasks</h3>
-      <TaskList tasks={completedTasks} />
+      {completedTasks.length > 0 && (
+        <>
+          <h3>Completed tasks</h3>
+          <TaskList tasks={completedTasks} />
+        </>
+      )}
       {error && <p style={{ color: "red" }}>{error}</p>}
     </>
   );
