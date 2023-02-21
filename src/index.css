@@ -8,3 +8,8 @@
   box-sizing: border-box;
   font-family: var(--font-family);
 }
+
+body {
+  margin: 0;
+  background: hsl(0, 0%, 10%);
+}
