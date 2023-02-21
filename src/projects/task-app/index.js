@@ -19,10 +19,8 @@ function TaskApp() {
   return (
     <>
       <AddTask />
-      <TaskList
-        error={error}
-        setError={setError}
-      />
+      <TaskList setError={setError} />
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </>
   );
 }
