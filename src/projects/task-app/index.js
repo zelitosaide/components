@@ -26,22 +26,24 @@ function TaskApp() {
   return (
     <div style={{ color: "hsla(0, 0%, 100%, 0.7)" }}>
       <AddTask />
-      {uncompletedTasks.length > 0 && (
-        <>
-          <TaskList
-            tasks={uncompletedTasks}
-            title="Uncompleted tasks"
-          />
-        </>
-      )}
-      {completedTasks.length > 0 && (
-        <>
-          <TaskList
-            tasks={completedTasks}
-            title="Completed tasks"
-          />
-        </>
-      )}
+      <div style={{ display: "flex" }}>
+        {uncompletedTasks.length > 0 && (
+          <div>
+            <TaskList
+              tasks={uncompletedTasks}
+              title="Uncompleted tasks"
+            />
+          </div>
+        )}
+        {completedTasks.length > 0 && (
+          <div>
+            <TaskList
+              tasks={completedTasks}
+              title="Completed tasks"
+            />
+          </div>
+        )}
+      </div>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
