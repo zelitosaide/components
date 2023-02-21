@@ -74,6 +74,7 @@ export default function AddTask() {
         Repeat
       </label>
       <Button
+        disabled={isAdding}
         onClick={async function () {
           setStatus("adding");
           setError(null);
@@ -86,7 +87,6 @@ export default function AddTask() {
             setStatus("typing");
           }
         }}
-        disabled={isAdding}
       >
         {isAdding ? "Adding task..." : "Add task"}
       </Button>
