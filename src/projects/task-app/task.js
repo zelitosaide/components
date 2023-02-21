@@ -63,6 +63,8 @@ export default function Task({ task }) {
             color: isExpired ? "rgb(252, 88, 50)" : "hsl(119, 72%, 35%)",
             fontSize: 11,
             display: "block",
+            marginLeft: 26,
+            marginTop: 4,
           }}
         >
           {formatDate(new Date(date))}, {hour}
