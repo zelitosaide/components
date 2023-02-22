@@ -17,6 +17,7 @@ export default function AddTask() {
   const [status, setStatus] = useState("typing");
   const { setError } = useError();
   const isAdding = status === "adding";
+  const [showForm, setShowForm] = useState(false);
 
   const { addTask } = useTasksEventHandlers();
 
@@ -28,51 +29,55 @@ export default function AddTask() {
   }
 
   return (
-    <>
-      <label style={{ display: "block", marginBottom: 10 }}>
-        Task:{" "}
-        <Input
-          value={text}
-          onChange={function (e) {
-            setText(e.target.value);
-          }}
-          disabled={isAdding}
-        />
-      </label>
-      <label style={{ display: "block", marginBottom: 10 }}>
-        Date:{" "}
-        <Input
-          type="date"
-          label="Date"
-          value={date}
-          onChange={function (e) {
-            setDate(e.target.value);
-          }}
-          disabled={isAdding}
-        />
-      </label>
-      <label style={{ display: "block", marginBottom: 10 }}>
-        Hour:{" "}
-        <Input
-          type="time"
-          label="Hour"
-          value={hour}
-          onChange={function (e) {
-            setHour(e.target.value);
-          }}
-          disabled={isAdding}
-        />
-      </label>
-      <label style={{ display: "block", marginBottom: 10 }}>
-        <Checkbox
-          value={isRepeated}
-          onChange={function (e) {
-            setIsRepeated(e.target.checked);
-          }}
-          disabled={isAdding}
-        />
-        Repeat
-      </label>
+    <div style={{ margin: 20 }}>
+      {showForm && (
+        <>
+          <label style={{ display: "block", marginBottom: 10 }}>
+            Task:{" "}
+            <Input
+              value={text}
+              onChange={function (e) {
+                setText(e.target.value);
+              }}
+              disabled={isAdding}
+            />
+          </label>
+          <label style={{ display: "block", marginBottom: 10 }}>
+            Date:{" "}
+            <Input
+              type="date"
+              label="Date"
+              value={date}
+              onChange={function (e) {
+                setDate(e.target.value);
+              }}
+              disabled={isAdding}
+            />
+          </label>
+          <label style={{ display: "block", marginBottom: 10 }}>
+            Hour:{" "}
+            <Input
+              type="time"
+              label="Hour"
+              value={hour}
+              onChange={function (e) {
+                setHour(e.target.value);
+              }}
+              disabled={isAdding}
+            />
+          </label>
+          <label style={{ display: "block", marginBottom: 10 }}>
+            <Checkbox
+              value={isRepeated}
+              onChange={function (e) {
+                setIsRepeated(e.target.checked);
+              }}
+              disabled={isAdding}
+            />
+            Repeat
+          </label>
+        </>
+      )}
       <Button
         disabled={isAdding}
         onClick={async function () {
@@ -90,6 +95,6 @@ export default function AddTask() {
       >
         {isAdding ? "Adding task..." : "Add task"}
       </Button>
-    </>
+    </div>
   );
 }
