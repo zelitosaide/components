@@ -32,9 +32,9 @@ export default function AddTask() {
     <div
       style={{
         margin: 20,
-        backgroundColor: "#1E1F26",
-        width: 350,
-        padding: 20,
+        // backgroundColor: "#1E1F26",
+        // width: 350,
+        // padding: 20,
       }}
     >
       {showForm && (
