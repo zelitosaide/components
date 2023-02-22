@@ -29,7 +29,14 @@ export default function AddTask() {
   }
 
   return (
-    <div style={{ margin: 20 }}>
+    <div
+      style={{
+        margin: 20,
+        backgroundColor: "#1E1F26",
+        width: 350,
+        padding: 20,
+      }}
+    >
       {showForm && (
         <>
           <label style={{ display: "block", marginBottom: 10 }}>
@@ -81,16 +88,17 @@ export default function AddTask() {
       <Button
         disabled={isAdding}
         onClick={async function () {
-          setStatus("adding");
-          setError(null);
-          try {
-            await addTask({ text, date, hour, isRepeated });
-            resetFields();
-          } catch (error) {
-            setError(error.message);
-          } finally {
-            setStatus("typing");
-          }
+          setShowForm(!showForm);
+          // setStatus("adding");
+          // setError(null);
+          // try {
+          //   await addTask({ text, date, hour, isRepeated });
+          //   resetFields();
+          // } catch (error) {
+          //   setError(error.message);
+          // } finally {
+          //   setStatus("typing");
+          // }
         }}
       >
         {isAdding ? "Adding task..." : "Add task"}
